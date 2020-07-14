@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MIT Center for Civic Media - ECPv5.1.2.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MIT Center for Civic Media
+X-ORIGINAL-URL:https://civic.mit.edu
+X-WR-CALDESC:Events for MIT Center for Civic Media
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:20190310T070000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:20191103T060000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20190221T130000
+DTEND;TZID=America/New_York:20190221T143000
+DTSTAMP:20200714T003431
+CREATED:20181221T164800Z
+LAST-MODIFIED:20181221T164800Z
+UID:2377-1550754000-1550759400@civic.mit.edu
+SUMMARY:Open Civic Meeting (Spring 2019)
+DESCRIPTION:During the semester we host weekly meetings every Thursday that are open to the public (except for the first Thursday of the month). This is a place to come with a question\, request for feedback\, or just to listen.  At the start of the meeting you can bid for time\, requesting things like a minute for an announcement or 5 minutes to introduce your project and ask for suggestions on folks to talk to about it. \n
+URL:https://civic.mit.edu/event/open-civic-meeting-spring-2019/2019-02-21/
+LOCATION:MIT Center for Civic Media\, 20 Ames St.\, Cambridge\, MA\, 02139\, United States
+CATEGORIES:Civic Meetings
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MIT Center for Civic Media - ECPv5.1.2.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MIT Center for Civic Media
+X-ORIGINAL-URL:https://civic.mit.edu
+X-WR-CALDESC:Events for MIT Center for Civic Media
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:20180311T070000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:20181104T060000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20180920T120000
+DTEND;TZID=America/New_York:20180920T130000
+DTSTAMP:20200714T003942
+CREATED:20180920T133940Z
+LAST-MODIFIED:20180920T134006Z
+UID:2284-1537444800-1537448400@civic.mit.edu
+SUMMARY:Civil Discourse in an Uncivil Age (Alex Heffner)
+DESCRIPTION:We’re hosting our first Civic Media Lunch of the year tomorrow starting at 12pm in the Civic space: E15-344. \nOur topic is “Civil Discourse in an Uncivil Age.” Our speaker\, Alex Heffner\,* host of “The Open Mind” on PBS\, will discuss the effects of divisiveness on discourse and governance and the impact of social media\, fake news and filter bubbles that polarize information intake. What are possible prescriptions to correct this vicious cycle? How can our footprint translate into pro-social instead of anti-social behavior? How can the press restore faith in civic life\, democracy\, and the construction of public policy? \nAlexander Heffner (@HeffnerA) is the host of The Open Mind (@OpenMindTV) on PBS and coauthor of A Documentary History of the United States (Penguin\, 2018). He has covered American politics\, civic life and Millennials for leading newspapers and magazines. He founded and edited the first-ever online national student newspapers covering the 2008 presidential campaign and the Obama presidency. His work has been profiled in The Washington Post\, The New York Times and The Los Angeles Times\, and he has lectured at the Kinder Institute for Constitutional Democracy at the University of Missouri\, the Post-Truth Initiative at the University of Sydney\, and the Center for Information and Bubble Studies at the University of Copenhagen\, among other institutions of learning. He directed a civic education initiative for which he taught in under-served classrooms and was the political director for WHRB 95.3 FM. A native New Yorker\, he is a graduate of Phillips Academy in Andover\, Massachusetts and Harvard. \n
+URL:https://civic.mit.edu/event/civil-discourse-in-an-uncivil-age-alex-heffner/
+LOCATION:MIT Center for Civic Media\, 20 Ames St.\, Cambridge\, MA\, 02139\, United States
+CATEGORIES:Talks
+ATTACH;FMTTYPE=image/png:https://civic.mit.edu/wp-content/uploads/sites/28/2018/09/alex-heffner-2015-300.png
+END:VEVENT
+END:VCALENDAR

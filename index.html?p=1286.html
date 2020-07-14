@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" class="no-js">
+<!--<![endif]-->
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="profile"  href="https://gmpg.org/xfn/11" />
+  <link rel="pingback" href="https://civic.mit.edu/xmlrpc.php" />
+  <!-- scripts for IE8 and less  -->
+  <!--[if lt IE 9]>
+    <script src="https://civic.mit.edu/wp-content/themes/customizr/assets/front/js/libs/html5.js"></script>
+  <![endif]-->
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>How Would You Design Crypto Backdoor Regulation? Ed Felten at CITP &#8211; MIT Center for Civic Media</title>
+<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="MIT Center for Civic Media &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="MIT Center for Civic Media &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="text/calendar" title="MIT Center for Civic Media &raquo; iCal Feed" href="events/index.html%3Fical=1" />
+<link rel="alternate" type="application/rss+xml" title="MIT Center for Civic Media &raquo; How Would You Design Crypto Backdoor Regulation? Ed Felten at CITP Comments Feed" href="2017/09/19/how-would-you-design-crypto-backdoor-regulation-ed-felten-at-citp/feed/index.html" />
+	<script type="text/javascript">
+		var ajaxurl = 'https://civic.mit.edu/wp-admin/admin-ajax.php';
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/civic.mit.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='userlist-style-css'  href='wp-content/plugins/wp-users-list-widget/css/style.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-calendar-pro-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/widget-calendar-full.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe_events-widget-calendar-pro-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/widget-calendar-theme.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='czr-gfonts-css'  href='https://fonts.googleapis.com/css?family=Sintony%7CPoppins&amp;display=swap' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-full-pro-calendar-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-full.min.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-pro-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-theme.min.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-pro-mobile-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-theme-mobile.min.css%3Fver=4.4.32.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css'  href='wp-content/plugins/the-events-calendar/common/src/resources/css/common-skeleton.min.css%3Fver=4.12.3.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-tooltip-css'  href='wp-content/plugins/the-events-calendar/common/src/resources/css/tooltip.min.css%3Fver=4.12.3.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-full-pro-mobile-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-full-mobile.min.css%3Fver=4.4.32.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='wp-block-library-css'  href='wp-includes/css/dist/block-library/style.min.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-blog-designer-fontawesome-stylesheets-css'  href='wp-content/plugins/blog-designer/css/fontawesome-all.min.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-blog-designer-css-stylesheets-css'  href='wp-content/plugins/blog-designer/css/designer_css.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='collapseomatic-css-css'  href='wp-content/plugins/jquery-collapse-o-matic/light_style.css%3Fver=1.6.css' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-main-css'  href='wp-content/themes/customizr/assets/front/css/style.min.css%3Fver=4.2.7.css' type='text/css' media='all' />
+<style id='customizr-main-inline-css' type='text/css'>
+::-moz-selection{background-color:#0a2882}::selection{background-color:#0a2882}a,.btn-skin:active,.btn-skin:focus,.btn-skin:hover,.btn-skin.inverted,.grid-container__classic .post-type__icon,.post-type__icon:hover .icn-format,.grid-container__classic .post-type__icon:hover .icn-format,[class*='grid-container__'] .entry-title a.czr-title:hover,input[type=checkbox]:checked::before{color:#0a2882}.czr-css-loader > div ,.btn-skin,.btn-skin:active,.btn-skin:focus,.btn-skin:hover,.btn-skin-h-dark,.btn-skin-h-dark.inverted:active,.btn-skin-h-dark.inverted:focus,.btn-skin-h-dark.inverted:hover{border-color:#0a2882}.tc-header.border-top{border-top-color:#0a2882}[class*='grid-container__'] .entry-title a:hover::after,.grid-container__classic .post-type__icon,.btn-skin,.btn-skin.inverted:active,.btn-skin.inverted:focus,.btn-skin.inverted:hover,.btn-skin-h-dark,.btn-skin-h-dark.inverted:active,.btn-skin-h-dark.inverted:focus,.btn-skin-h-dark.inverted:hover,.sidebar .widget-title::after,input[type=radio]:checked::before{background-color:#0a2882}.btn-skin-light:active,.btn-skin-light:focus,.btn-skin-light:hover,.btn-skin-light.inverted{color:#0f3ec9}input:not([type='submit']):not([type='button']):not([type='number']):not([type='checkbox']):not([type='radio']):focus,textarea:focus,.btn-skin-light,.btn-skin-light.inverted,.btn-skin-light:active,.btn-skin-light:focus,.btn-skin-light:hover,.btn-skin-light.inverted:active,.btn-skin-light.inverted:focus,.btn-skin-light.inverted:hover{border-color:#0f3ec9}.btn-skin-light,.btn-skin-light.inverted:active,.btn-skin-light.inverted:focus,.btn-skin-light.inverted:hover{background-color:#0f3ec9}.btn-skin-lightest:active,.btn-skin-lightest:focus,.btn-skin-lightest:hover,.btn-skin-lightest.inverted{color:#1145e1}.btn-skin-lightest,.btn-skin-lightest.inverted,.btn-skin-lightest:active,.btn-skin-lightest:focus,.btn-skin-lightest:hover,.btn-skin-lightest.inverted:active,.btn-skin-lightest.inverted:focus,.btn-skin-lightest.inverted:hover{border-color:#1145e1}.btn-skin-lightest,.btn-skin-lightest.inverted:active,.btn-skin-lightest.inverted:focus,.btn-skin-lightest.inverted:hover{background-color:#1145e1}.pagination,a:hover,a:focus,a:active,.btn-skin-dark:active,.btn-skin-dark:focus,.btn-skin-dark:hover,.btn-skin-dark.inverted,.btn-skin-dark-oh:active,.btn-skin-dark-oh:focus,.btn-skin-dark-oh:hover,.post-info a:not(.btn):hover,.grid-container__classic .post-type__icon .icn-format,[class*='grid-container__'] .hover .entry-title a,.widget-area a:not(.btn):hover,a.czr-format-link:hover,.format-link.hover a.czr-format-link,button[type=submit]:hover,button[type=submit]:active,button[type=submit]:focus,input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus,.tabs .nav-link:hover,.tabs .nav-link.active,.tabs .nav-link.active:hover,.tabs .nav-link.active:focus{color:#061749}.grid-container__classic.tc-grid-border .grid__item,.btn-skin-dark,.btn-skin-dark.inverted,button[type=submit],input[type=submit],.btn-skin-dark:active,.btn-skin-dark:focus,.btn-skin-dark:hover,.btn-skin-dark.inverted:active,.btn-skin-dark.inverted:focus,.btn-skin-dark.inverted:hover,.btn-skin-h-dark:active,.btn-skin-h-dark:focus,.btn-skin-h-dark:hover,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-dark-oh:active,.btn-skin-dark-oh:focus,.btn-skin-dark-oh:hover,.btn-skin-dark-oh.inverted:active,.btn-skin-dark-oh.inverted:focus,.btn-skin-dark-oh.inverted:hover,button[type=submit]:hover,button[type=submit]:active,button[type=submit]:focus,input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus{border-color:#061749}.btn-skin-dark,.btn-skin-dark.inverted:active,.btn-skin-dark.inverted:focus,.btn-skin-dark.inverted:hover,.btn-skin-h-dark:active,.btn-skin-h-dark:focus,.btn-skin-h-dark:hover,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-dark-oh.inverted:active,.btn-skin-dark-oh.inverted:focus,.btn-skin-dark-oh.inverted:hover,.grid-container__classic .post-type__icon:hover,button[type=submit],input[type=submit],.czr-link-hover-underline .widgets-list-layout-links a:not(.btn)::before,.czr-link-hover-underline .widget_archive a:not(.btn)::before,.czr-link-hover-underline .widget_nav_menu a:not(.btn)::before,.czr-link-hover-underline .widget_rss ul a:not(.btn)::before,.czr-link-hover-underline .widget_recent_entries a:not(.btn)::before,.czr-link-hover-underline .widget_categories a:not(.btn)::before,.czr-link-hover-underline .widget_meta a:not(.btn)::before,.czr-link-hover-underline .widget_recent_comments a:not(.btn)::before,.czr-link-hover-underline .widget_pages a:not(.btn)::before,.czr-link-hover-underline .widget_calendar a:not(.btn)::before,[class*='grid-container__'] .hover .entry-title a::after,a.czr-format-link::before,.comment-author a::before,.comment-link::before,.tabs .nav-link.active::before{background-color:#061749}.btn-skin-dark-shaded:active,.btn-skin-dark-shaded:focus,.btn-skin-dark-shaded:hover,.btn-skin-dark-shaded.inverted{background-color:rgba(6,23,73,0.2)}.btn-skin-dark-shaded,.btn-skin-dark-shaded.inverted:active,.btn-skin-dark-shaded.inverted:focus,.btn-skin-dark-shaded.inverted:hover{background-color:rgba(6,23,73,0.8)}.navbar-brand,.header-tagline,h1,h2,h3,.tc-dropcap { font-family : 'Sintony'; }
+body { font-family : 'Poppins'; }
+
+.tc-header.border-top { border-top-width: 5px; border-top-style: solid }
+.tc-singular-thumbnail-wrapper .entry-media__wrapper {
+                max-height: 200px;
+                height :200px
+              }
+
+@media (min-width: 576px ){
+.tc-singular-thumbnail-wrapper .entry-media__wrapper {
+                  max-height: 500px;
+                  height :500px
+                }
+}
+
+#czr-push-footer { display: none; visibility: hidden; }
+        .czr-sticky-footer #czr-push-footer.sticky-footer-enabled { display: block; }
+        
+</style>
+<link rel='stylesheet' id='dry_awp_theme_style-css'  href='wp-content/plugins/advanced-wp-columns/assets/css/awp-columns.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tmm-css'  href='wp-content/plugins/team-members/inc/css/tmm_style.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.js%3Fver=1.12.4-wp'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js%3Fver=1.4.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/vendor/jquery-resize/jquery.ba-resize.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/vendor/jquery-placeholder/jquery.placeholder.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/common/vendor/momentjs/moment.min.js%3Fver=4.12.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tribe_js_config = {"permalink_settings":"\/%year%\/%monthnum%\/%day%\/%postname%\/","events_post_type":"tribe_events","events_base":"https:\/\/civic.mit.edu\/events\/","update_urls":{"shortcode":{"list":true,"month":true,"day":true}},"debug":""};
+var tribe_js_config = {"permalink_settings":"\/%year%\/%monthnum%\/%day%\/%postname%\/","events_post_type":"tribe_events","events_base":"https:\/\/civic.mit.edu\/events\/","update_urls":{"shortcode":{"list":true,"month":true,"day":true}},"debug":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/src/resources/js/tribe-events.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var TribeEventsPro = {"geocenter":{"max_lat":0,"max_lng":0,"min_lat":0,"min_lng":0},"map_tooltip_event":"Event: ","map_tooltip_address":"Address: "};
+var TribeEventsPro = {"geocenter":{"max_lat":0,"max_lng":0,"min_lat":0,"min_lng":0},"map_tooltip_event":"Event: ","map_tooltip_address":"Address: "};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-calendar-pro/src/resources/js/tribe-events-pro.min.js%3Fver=4.4.32'></script>
+<script type='text/javascript' src='wp-content/plugins/blog-designer/js/designer.js%3Fver=5.4.2'></script>
+<script type='text/javascript' src='wp-content/themes/customizr/assets/front/js/libs/modernizr.min.js%3Fver=4.2.7'></script>
+<script src='wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-before.js'></script>
+<script type='text/javascript' src='wp-includes/js/underscore.min.js%3Fver=1.8.3'></script>
+<script src='wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-after.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CZRParams = {"assetsPath":"https:\/\/civic.mit.edu\/wp-content\/themes\/customizr\/assets\/front\/","mainScriptUrl":"https:\/\/civic.mit.edu\/wp-content\/themes\/customizr\/assets\/front\/js\/tc-scripts.min.js?4.2.7","deferFontAwesome":"1","fontAwesomeUrl":"https:\/\/civic.mit.edu\/wp-content\/themes\/customizr\/assets\/shared\/fonts\/fa\/css\/fontawesome-all.min.css?4.2.7","_disabled":[],"centerSliderImg":"1","isLightBoxEnabled":"1","SmoothScroll":{"Enabled":true,"Options":{"touchpadSupport":false}},"isAnchorScrollEnabled":"","anchorSmoothScrollExclude":{"simple":["[class*=edd]",".carousel-control","[data-toggle=\"modal\"]","[data-toggle=\"dropdown\"]","[data-toggle=\"czr-dropdown\"]","[data-toggle=\"tooltip\"]","[data-toggle=\"popover\"]","[data-toggle=\"collapse\"]","[data-toggle=\"czr-collapse\"]","[data-toggle=\"tab\"]","[data-toggle=\"pill\"]","[data-toggle=\"czr-pill\"]","[class*=upme]","[class*=um-]"],"deep":{"classes":[],"ids":[]}},"timerOnScrollAllBrowsers":"1","centerAllImg":"1","HasComments":"","LoadModernizr":"1","stickyHeader":"","extLinksStyle":"","extLinksTargetExt":"","extLinksSkipSelectors":{"classes":["btn","button"],"ids":[]},"dropcapEnabled":"","dropcapWhere":{"post":"","page":""},"dropcapMinWords":"","dropcapSkipSelectors":{"tags":["IMG","IFRAME","H1","H2","H3","H4","H5","H6","BLOCKQUOTE","UL","OL"],"classes":["btn"],"id":[]},"imgSmartLoadEnabled":"","imgSmartLoadOpts":{"parentSelectors":["[class*=grid-container], .article-container",".__before_main_wrapper",".widget-front",".post-related-articles",".tc-singular-thumbnail-wrapper"],"opts":{"excludeImg":[".tc-holder-img"]}},"imgSmartLoadsForSliders":"1","pluginCompats":[],"isWPMobile":"","menuStickyUserSettings":{"desktop":"stick_up","mobile":"stick_up"},"adminAjaxUrl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","ajaxUrl":"https:\/\/civic.mit.edu\/?czrajax=1","frontNonce":{"id":"CZRFrontNonce","handle":"09b8185493"},"isDevMode":"","isModernStyle":"1","i18n":{"Permanently dismiss":"Permanently dismiss"},"frontNotifications":{"welcome":{"enabled":false,"content":"","dismissAction":"dismiss_welcome_note_front"}},"preloadGfonts":"","googleFonts":"Sintony%7CPoppins"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/themes/customizr/assets/front/js/tc-scripts.min.js%3Fver=4.2.7' defer></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Digital Democracy: Participatory Mapping &#038; Tool-building in the Amazon' href='index.html%3Fp=239.html' />
+<link rel='next' title='An Open Letter From Civic Hackers to Puerto Rico &#038; USVI in the Wake of Hurricane Maria' href='index.html%3Fp=271.html' />
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel="canonical" href="index.html%3Fp=1286.html" />
+<link rel='shortlink' href='index.html%3Fp=1286.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fcivic.mit.edu%252F2017%252F09%252F19%252Fhow-would-you-design-crypto-backdoor-regulation-ed-felten-at-citp%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fcivic.mit.edu%252F2017%252F09%252F19%252Fhow-would-you-design-crypto-backdoor-regulation-ed-felten-at-citp%252F&amp;format=xml" />
+<style type="text/css" id="tve_global_variables">:root{}</style><script src='https://wordpress.brownbag.me/?dm=92dfdf7b65c23102d23f0f69d602eef7&amp;action=load&amp;blogid=28&amp;siteid=1&amp;t=1093500061&amp;back=https%3A%2F%2Fcivic.mit.edu%2F2017%2F09%2F19%2Fhow-would-you-design-crypto-backdoor-regulation-ed-felten-at-citp%2F' type='text/javascript'></script><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://civic.mit.edu"><link rel="https://theeventscalendar.com/" href="wp-json/tribe/events/v1/index.html" /><!-- All in one Favicon 4.7 --><style type="text/css" id="thrive-default-styles"></style><link rel="icon" href="wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-32x32.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-180x180.png" />
+<meta name="msapplication-TileImage" content="https://civic.mit.edu/wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-270x270.png" />
+</head>
+
+  <body class="post-template-default single single-post postid-1286 single-format-standard wp-embed-responsive tribe-no-js czr-link-hover-underline header-skin-light footer-skin-dark czr-no-sidebar tc-center-images czr-full-layout czr-sticky-footer">
+          <a class="screen-reader-text skip-link" href="index.html%3Fp=1286.html#content">Skip to content</a>
+    
+    
+    <div id="tc-page-wrap" class="">
+
+      <header class="tpnav-header__header tc-header sl-logo_left sticky-brand-shrink-on sticky-transparent border-top czr-submenu-fade czr-submenu-move" >
+        <div class="primary-navbar__wrapper d-none d-lg-block has-horizontal-menu desktop-sticky" >
+  <div class="container">
+    <div class="row align-items-center flex-row primary-navbar__row">
+      <div class="branding__container col col-auto" >
+  <div class="branding align-items-center flex-column ">
+    <div class="branding-row d-flex align-self-start flex-row align-items-center">
+      <div class="navbar-brand col-auto " >
+  <a class="navbar-brand-sitelogo" href="index.html"  aria-label="MIT Center for Civic Media | Creating Technology for Social Change" >
+    <img src="wp-content/uploads/sites/28/2018/01/cropped-cropped-CivicMedia_Logo_K_RGB-1.png" alt="Back Home" class="" width="248" height="149" style="max-width:250px;max-height:100px" data-no-retina>  </a>
+</div>
+      </div>
+    <span class="header-tagline " >
+  Creating Technology for Social Change</span>
+
+  </div>
+</div>
+      <div class="primary-nav__container justify-content-lg-around col col-lg-auto flex-lg-column" >
+  <div class="primary-nav__wrapper flex-lg-row align-items-center justify-content-end">
+              <nav class="primary-nav__nav col" id="primary-nav">
+          <div class="nav__menu-wrapper primary-nav__menu-wrapper justify-content-end czr-open-on-hover" >
+<ul id="main-menu" class="primary-nav__menu regular-nav nav__menu nav"><li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20"><a href="index.html" class="nav__link"><span class="nav__title">Home</span></a></li>
+<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://www.media.mit.edu/groups/civic-media/projects/" class="nav__link"><span class="nav__title">Projects</span></a></li>
+<li id="menu-item-2213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2213"><a href="events.html" class="nav__link"><span class="nav__title">Events</span></a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="index.html%3Fp=4.html" class="nav__link"><span class="nav__title">Teaching</span></a></li>
+<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="index.html%3Fp=34.html" class="nav__link"><span class="nav__title">Team</span></a></li>
+<li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-98"><a href="blog.html" class="nav__link"><span class="nav__title">Blog</span></a></li>
+<li id="menu-item-2547" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2547"><a href="index.html%3Fp=2546.html" class="nav__link"><span class="nav__title">Academic Publications</span></a></li>
+</ul></div>        </nav>
+    <div class="primary-nav__utils nav__utils col-auto" >
+    <ul class="nav utils flex-row flex-nowrap regular-nav">
+      <li class="nav__search " >
+  <a href="index.html%3Fp=1286.html#" class="search-toggle_btn icn-search czr-overlay-toggle_btn"  aria-expanded="false"><span class="sr-only">Search</span></a>
+        <div class="czr-search-expand">
+      <div class="czr-search-expand-inner"><div class="search-form__container " >
+  <form action="index.html" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5f0cc40432136" id="lsearch-5f0cc40432136">
+        <span class="screen-reader-text">Search</span>
+        <input id="s-5f0cc40432136" class="form-control czr-search-field" name="s" type="search" value="" aria-describedby="lsearch-5f0cc40432136" placeholder="Search &hellip;">
+      </label>
+      <button type="submit" class="button"><i class="icn-search"></i><span class="screen-reader-text">Search &hellip;</span></button>
+    </div>
+  </form>
+</div></div>
+    </div>
+    </li>
+    </ul>
+</div>  </div>
+</div>
+    </div>
+  </div>
+</div>    <div class="mobile-navbar__wrapper d-lg-none mobile-sticky" >
+    <div class="branding__container justify-content-between align-items-center container" >
+  <div class="branding flex-column">
+    <div class="branding-row d-flex align-self-start flex-row align-items-center">
+      <div class="navbar-brand col-auto " >
+  <a class="navbar-brand-sitelogo" href="index.html"  aria-label="MIT Center for Civic Media | Creating Technology for Social Change" >
+    <img src="wp-content/uploads/sites/28/2018/01/cropped-cropped-CivicMedia_Logo_K_RGB-1.png" alt="Back Home" class="" width="248" height="149" style="max-width:250px;max-height:100px" data-no-retina>  </a>
+</div>
+    </div>
+      </div>
+  <div class="mobile-utils__wrapper nav__utils regular-nav">
+    <ul class="nav utils row flex-row flex-nowrap">
+      <li class="nav__search " >
+  <a href="index.html%3Fp=1286.html#" class="search-toggle_btn icn-search czr-dropdown" data-aria-haspopup="true" aria-expanded="false"><span class="sr-only">Search</span></a>
+        <div class="czr-search-expand">
+      <div class="czr-search-expand-inner"><div class="search-form__container " >
+  <form action="index.html" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5f0cc40432611" id="lsearch-5f0cc40432611">
+        <span class="screen-reader-text">Search</span>
+        <input id="s-5f0cc40432611" class="form-control czr-search-field" name="s" type="search" value="" aria-describedby="lsearch-5f0cc40432611" placeholder="Search &hellip;">
+      </label>
+      <button type="submit" class="button"><i class="icn-search"></i><span class="screen-reader-text">Search &hellip;</span></button>
+    </div>
+  </form>
+</div></div>
+    </div>
+        <ul class="dropdown-menu czr-dropdown-menu">
+      <li class="header-search__container container">
+  <div class="search-form__container " >
+  <form action="index.html" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5f0cc40432758" id="lsearch-5f0cc40432758">
+        <span class="screen-reader-text">Search</span>
+        <input id="s-5f0cc40432758" class="form-control czr-search-field" name="s" type="search" value="" aria-describedby="lsearch-5f0cc40432758" placeholder="Search &hellip;">
+      </label>
+      <button type="submit" class="button"><i class="icn-search"></i><span class="screen-reader-text">Search &hellip;</span></button>
+    </div>
+  </form>
+</div></li>    </ul>
+  </li>
+<li class="hamburger-toggler__container " >
+  <button class="ham-toggler-menu czr-collapsed" data-toggle="czr-collapse" data-target="#mobile-nav"><span class="ham__toggler-span-wrapper"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></span><span class="screen-reader-text">Menu</span></button>
+</li>
+    </ul>
+  </div>
+</div>
+<div class="mobile-nav__container " >
+   <nav class="mobile-nav__nav flex-column czr-collapse" id="mobile-nav">
+      <div class="mobile-nav__inner container">
+      <div class="nav__menu-wrapper mobile-nav__menu-wrapper czr-open-on-click" >
+<ul id="mobile-nav-menu" class="mobile-nav__menu vertical-nav nav__menu flex-column nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20"><a href="index.html" class="nav__link"><span class="nav__title">Home</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://www.media.mit.edu/groups/civic-media/projects/" class="nav__link"><span class="nav__title">Projects</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2213"><a href="events.html" class="nav__link"><span class="nav__title">Events</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="index.html%3Fp=4.html" class="nav__link"><span class="nav__title">Teaching</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="index.html%3Fp=34.html" class="nav__link"><span class="nav__title">Team</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-98"><a href="blog.html" class="nav__link"><span class="nav__title">Blog</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2547"><a href="index.html%3Fp=2546.html" class="nav__link"><span class="nav__title">Academic Publications</span></a></li>
+</ul></div>      </div>
+  </nav>
+</div></div></header>
+
+
+  
+    <div id="main-wrapper" class="section">
+
+                      
+
+          
+          <div class="container" role="main">
+
+            
+            <div class="flex-row row column-content-wrapper">
+
+                
+                <div id="content" class="col-12 article-container">
+
+                  <article id="post-1286" class="post-1286 post type-post status-publish format-standard czr-hentry" >
+    <header class="entry-header " >
+  <div class="entry-header-inner">
+            <h1 class="entry-title">How Would You Design Crypto Backdoor Regulation? Ed Felten at CITP</h1>
+        <div class="header-bottom">
+      <div class="post-info">
+                  <span class="entry-meta">
+        <span class="author-meta">by <span class="author vcard"><span class="author_name"><a class="url fn n" href="author/natematias/index.html" title="View all posts by natematias" rel="author">natematias</a></span></span></span><span class="v-separator">|</span>Published <a href="2017/09/19/index.html" title="1:43 pm" rel="bookmark"><time class="entry-date published updated" datetime="September 19, 2017">September 19, 2017</time></a></span>      </div>
+    </div>
+      </div>
+</header>  <div class="post-entry tc-content-inner">
+    <section class="post-content entry-content " >
+            <div class="czr-wp-the-content">
+        <p>Law enforcement sometimes argue that they need backdoors to encryption in order to carry out their mission, while cryptographers like Bruce Schneier describe the public cybersecurity risk from backdoors and say that the &#8220;<a href="https://www.schneier.com/essays/archives/2016/04/the_value_of_encrypt.html">technology just doesn&#8217;t work that way</a>.&#8221;</p>
+<p>I&#8217;m here at the Princeton University Center for Information Tech Policy, liveblogging the first public lunch of the semester, where <a href="https://www.cs.princeton.edu/~felten/">Ed Felten</a> shares work in progress to find a way through this argument. Ed is the director of CITP and a professor of computer science and public affairs at Princeton University. He served at the White House as the Deputy U.S. Chief Technology Officer from June 2015 to January 2017. Ed was also the first chief technologist for the Federal Trade Commission from January 2011 until September 2012.</p>
+<div align="center"><img src="https://imgur.com/AyGu3qh.png" style="width:600px"/></div>
+<p>Ed starts out by pointing out that his talk is work in progress, that he&#8217;s thinking about the U.S. policy context. His goal is to explore the encryption policy issue in relation to the details, understand the tradeoffs, and imagine effective policies– something he says is rare in debates over encryption backdoors.</p>
+<p><strong>Five Equities For Thinking about Encryption Backdoor Policies</strong></p>
+<p>People who debate encryption backdoors are often thinking about five &#8220;equities,&#8221; says Ed. Focus on <strong>public safety</strong> concerns the ability of law enforcement and intelligence community to protect the public from harm. <strong>Cybersecurity</strong> is the ability of law-abiding people to protect their systems. <strong>Personal privacy</strong> is the ability of users to control the data about them. <strong>Civil liberties</strong> and free expression concern the ability of people to exercise their rights and speak freely. <strong>Economic competitiveness</strong> is the ability of US companies to compete in international and domestic markets. Across all of these, we care about these things over time, not just immediately.</p>
+<p>Ed notes that policy debates often come to loggerheads because people weight these equities differently. For example, people often contrast public safety with cybersecurity without considering other factors. They also come to loggerheads when people start with these equities without asking in detail what regulation can and cannot do. </p>
+<p><strong>Understanding Policy Pipielines</strong></p>
+<p>When we think about policies, Ed encourages us to think about a three-part pipeline. Policymakers start by thinking about <strong>regulation</strong>, hope that the regulation creates<strong> changes in design and user behavior</strong>, and then ask the <strong>impact of those changes and behaviors on </strong>the <strong>equities that matter</strong>. In this conversation, Ed is working from an assumption of basic trust in the US rule of law, as well as realism about technology, economics, and policy.</p>
+<p><strong>The Nobody But Us Principle (NOBUS)</strong><br />In the past, signals intelligence agencies have tended to have two goals: to undermine the security of adversaries&#8217; technologies while strengthening the security of our own technologies. Lately, there&#8217;s been a problem, which is that US adversaries tend to use the same technologies: strengthening or weakening adversaries&#8217; security also affects our own security.</p>
+<p>The usual doctrine in these situations is to assume that it&#8217;s better to strengthen encryption, in hopes that one&#8217;s own country benefits from that strength. But there&#8217;s an exception: perhaps one could look for methods of access that the US can carry out but adversaries cannot; these methods are NOBUS (nobody but us). For example, zero-day exploits are an example of something that intelligence agencies might think of as NOBUS. Of course, as Ed points out, the NOBUS principle raises important questions about who the &#8220;us&#8221; are in any policy idea.</p>
+<p><strong>NOBUS Test in Crypto Policy</strong></p>
+<p>Based on the NOBUS principle, Ed proposes a principle that any mandated means of access to encrypted data must be NOBUS with high probability. Several rules fail this test, such as banning all encryption, or requiring that encryption be disabled by default.</p>
+<p><strong>Why Do People Need Crypto?</strong></p>
+<p>Ed offers some basics on cryptography, pointing out that cryptography is used to protect three things. It protects confidentiality, so unauthorized party can&#8217;t learn message contents. Crypto protects integrity, so unauthorized parties can&#8217;t forge or modify messages without detection. It also protects identity, protecting people from impersonation. Ed describes two main scenarios for uses of crypto: storage and communications.</p>
+<p>In storage situations, device keys and passcodes are combined to create a storage key that can be used to encrypt and decrypt data from a computer or a phone. Once the key is no longer being used, the information is removed and the device is safe.</p>
+<div align="center"><img src="https://imgur.com/EpsXllH.png" style="width:600px"/></div>
+<p>Encrypted communications are more complicated. Here is a typical situation: In a handshake phase, two people use long-term identity keys to confirm who they are and receive a session key. During the data transfer phase, the session key is used to encrypt and decrypt messages between them. They might change the session key from time to time, and when they are done with the key, they delete it. Once they have deleted a session key, an adversary will be unable to decrypt anything that was said during that session key. Systems like TLS for secure browsing and the Signal protocol fit within this framework.</p>
+<p><strong>Trends in the Uses of Crypto</strong></p>
+<p>When law enforcement make statements about how they&#8217;re losing access to communications, they&#8217;re making a claim about trends. We are seeing a move toward more encryption in storage and on devices, says Ed. To understand the actual impact on security, Ed argues, we should ask instead: who can recover the data? If only the user can recover the data, then law enforcement/intelligence (LE/IC) may lose access. But if the service provider can recover, then LE/IC can get access from the provider. To think through this, Ed asks us to imagine email services. Messages might be encrypted, but law enforcement can often still get companies to give the data to law enforcement.</p>
+<p>Ed predicts that in situations where most users want data recovery as a feature, or where the nature of the service requires the provider to have access, the provider will have access, and law enforcement will be able to access it. This includes most email and file storage. Otherwise, users will have exclusive control, in areas such as private messages and ephemeral data.</p>
+<p><strong>Designing a Regulatory Requirement for Crypto Backdoors</strong></p>
+<p>Any regulatory requirement needs to work through a series of trade-offs, issues that have no relation to the technical questions, says Ed. He outlines a series of decisions that need to be made when designing a regulation on crypto backdoors.</p>
+<p>The first question to ask is: should we regulate storage only, or storage and comunications? Communications are harder because keys change frequently and LE/IC can&#8217;t assume access to the device. Storage regulations typically assume that LE/IC has access to the device, so this is an important question. Storage-only approaches are simpler, so regulation writers should consider whether they should stretch for communications or not. In today&#8217;s conversation, Ed focuses on storage for simplicity.</p>
+<p>The next decision is to ask which services are covered by the regulation. There are many kinds of products that use crypto, and regulators need to decide how much to cover. The broader the range, the more complicated the regulation is, and the greater the burden becomes across the equities. But simple regulations can put many of LE/IC requests beyond their reach. Ed urges us to stop thinking about the iphone, a vertically-integrated system run by a single company. Think instead about an android phone, which involves many different companies from many countries in one device: chip makers, device manufacturers, OS distributors, open source contributors, crypto library distributors, mobile carriers, retailers, and app developers. All of them put technology on the phone, and you have to decide which ones in this supply chain are covered by the regulation.</p>
+<p>When deciding who to cover in the regulation, you also need to ask what they&#8217;re able to do. Chip makers can&#8217;t control the operating systems. Manufacturers are often foreign. App developers are small teams or individual contractors.</p>
+<p>The next decision is to ask <strong>how robust encryption backdoors must be</strong>. If users attempt to prevent access, how strongly must the system resist? Ed outlines several options. The first option is not to resist user attempts. Another option is to make disabling the backdoor at least as hard as jailbreaking the device. A stronger option would be to require users to conduct non-trivial modifications to hardware to secure. If you require this, you will make it much less likely that adversaries and would-be targets would evade the public safety investigation, but it also probably requires hardware modifications. Legacy systems would be unable to comply, and depending on who you require to comply, they might not be able to comply; you couldn&#8217;t ask Google to require hardware backdoors on android phones, whose hardware they don&#8217;t control.</p>
+<p>Next, regulators need to decide <strong>how to treat legacy products</strong>. Do you allow legacy systems? Do you ban them? If so, how can people tell if their system has a backdoor to comply with the ban, and do you want them to know?</p>
+<p>Another decision is to work out <strong>what to do with travelers</strong>. If someone travels to the U.S. and brings a device that is compliant with their own country&#8217;s rules but not US policies, what do you do? Do you allow it, so long as the visit is time-limited? Do you prohibit it, detecting and taking away the device? Do you try to reconfigure the device at the border? Manually? Automatically? How would these requirements violate trade agreements?</p>
+<p>All of these decisions, says Ed, are decisions you need to make even before discussing the technical details. Next, he talks through the most common technical proposal, key escrow, to show how regulators could reason through these policies.</p>
+<p><strong>Technical Example: Key Escrow</strong></p>
+<p>Under the key escrow approach, storage systems are required to keep a copy of the storage key, encrypting it so that a &#8220;recovery key&#8221; is needed to recover it. The storage system creates and stores an escrow package. Recovering takes a three-stage process: extract the escrow package from the device, decrypt the escrow package to get the storage key, and use the storage key to decrypt the data.</p>
+<p>If you use key escrow, you have to decide if you&#8217;re going to require physical access. On option is to require that physical access is necessary, you could allow remote access to the escrow package, or you could leave it to the market. Requiring physical access limits the worst case from the leak of keys; even if the recovery key is compromised, users could protect themselves through physical control. In the US, law enforcement have said that they envision using key escrow systems only in cases of physical access and court orders. Relying on a requirement for physical access depends on a technical ability to do so, something that is theoretical so far and may be difficult to force hardware supply chains to comply with.</p>
+<p>Next Ed shows us a matrix of four policy approaches:</p>
+<ul>
+<li>The device must include a physical access port for law enforcement</li>
+<li>The company must hold and provide the escrow package and give it to law enforcement if requested</li>
+<li>The company must provide the storage key directly when requested from law enforcement</li>
+<li>The company must provide the data</li>
+</ul>
+<p>Lower on the list, the company does the work and has more design latitude about how to respond. But the bottom two policy approaches have a NOBUS problem, since they expose users to third party access. Requiring companies to provide the data and to store the key probably fails the NOBUS test as well. In the top two options, law enforcement needs knowledge about many devices, probably managed through industry standard.</p>
+<p>Maybe there are more options. Ed talks about a number of other possibilities, including working on who holds the recovery keys. Giving all keys to the US government could harm competitiveness and be blocked by other governments. Giving keys to other countries fails the NOBUS test because it gives other governments a competitive advantage.</p>
+<p>Another option is to split the keys, giving the keys to multiple parties and requiring them all to participate. Imagine for example that one key is held by the company and one by the FBI. This approach has some advantages. The approach is NOBUS if any one of the key holders is NOBUS, since any key holder can withhold participation. This approach is also more resilient against compromise of recovery keys. Disadvantages are that any key holder can block recovery, availability is harder to ensure, and every key holder learns which devices were accessed.</p>
+<p>Another split-key model requires that some subset of all keys be used (K-of-N keys) to access the data. The advantages of the system are that the approach is NOBUS if at least N-K+1 of the key holders are NOBUS. It&#8217;s more resilient against compromise than a single key. Among disadvantages, any N-K+1 key holders can block recovery, K key holders learn which devices were accessed, and the system is much less resilient against compromise than a simple split key.</p>
+<p><strong>Where Does This Leave Us?</strong></p>
+<p>Ed wraps up by arguing that we can have a policy discussion beyond the impasse people in security policy have reached. He suggests that we think about the entire regulation pipeline, from regulation to response to impact. Next, regulators need to think about the full range of products, how they are designed, how they are used, and the impact on equities. The NOBUS test does help regulators narrow down choices. Yet each of the decisions has tradeoffs with pros and cons. Overall, Ed hopes that his talk shows how regulation debates should engage with details and unpack how to think about the policy by working through specific proposals.</p>
+<p>Finally, Ed encourages us to take the final step that his talk leaves out: thinking through the impact of policy ideas on the equities in play and how to weigh them.</p>
+      </div>
+      <footer class="post-footer clearfix">
+                <div class="row entry-meta justify-content-between align-items-center">
+                          </div>
+      </footer>
+    </section><!-- .entry-content -->
+  </div><!-- .post-entry -->
+  </article>
+<div id="czr-comments" class="comments-area " >
+    <div id="comments" class="comments_container comments czr-comments-block">
+  <section class="post-comments">
+      </section>
+</div>  </div>                </div>
+
+                
+            </div><!-- .column-content-wrapper -->
+
+            
+
+          </div><!-- .container -->
+
+          <div id="czr-push-footer" ></div>
+    </div><!-- #main-wrapper -->
+
+    
+          <div class="container-fluid">
+        <div class="post-navigation row " >
+  <nav id="nav-below" class="col-12">
+    <h2 class="sr-only">Post navigation</h2>
+    <ul class="czr_pager row flex-row flex-no-wrap">
+      <li class="previous col-5 text-left">
+              <span class="sr-only">Previous post</span>
+        <span class="nav-previous nav-dir"><a href="index.html%3Fp=239.html" rel="prev"><span class="meta-nav"><i class="arrow icn-left-open-big"></i><span class="meta-nav-title">Digital Democracy: Participatory Mapping &#038; Tool-building in the Amazon</span></span></a></span>
+            </li>
+      <li class="nav-back col-2 text-center">
+                <a href="blog.html" title="Back to post list">
+          <span><i class="icn-grid-empty"></i></span>
+          <span class="sr-only">Back to post list</span>
+        </a>
+              </li>
+      <li class="next col-5 text-right">
+              <span class="sr-only">Next post</span>
+        <span class="nav-next nav-dir"><a href="index.html%3Fp=271.html" rel="next"><span class="meta-nav"><span class="meta-nav-title">An Open Letter From Civic Hackers to Puerto Rico &#038; USVI in the Wake of Hurricane Maria</span><i class="arrow icn-right-open-big"></i></span></a></span>
+            </li>
+  </ul>
+  </nav>
+</div>
+      </div>
+    
+<footer id="footer" class="footer__wrapper" >
+  <div id="footer-widget-area" class="widget__wrapper" role="complementary" >
+  <div class="container widget__container">
+    <div class="row">
+                      <div id="footer_one" class="col-md-4 col-12">
+            <aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><img style="margin-top:20px" src="wp-content/uploads/sites/28/2018/04/footer-mit-media-lab.png" alt="MIT Media Lab"/>
+<br /><br />
+<a href="login.html">Login</a>
+</div></aside>          </div>
+                  <div id="footer_two" class="col-md-4 col-12">
+            <aside id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><img style="margin-top:10px" src="wp-content/uploads/sites/28/2018/04/logotype-white.png" alt="CMS/W"/>
+
+</div></aside><aside id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><img src="wp-content/uploads/sites/28/2018/04/footer-mit.png" alt="MIT"/>
+<br /><br />
+<small>
+All content Attribution-ShareAlike 3.0 United States (CC BY-SA 3.0) unless otherwise noted.
+The MIT Center for Civic Media is a project of MIT Comparative Media Studies and the MIT Media Lab.
+</small></div></aside>          </div>
+                  <div id="footer_three" class="col-md-4 col-12">
+            <aside id="tribe-events-adv-list-widget-2" class="widget tribe-events-adv-list-widget"><h5 class="widget-title">Upcoming Events</h5>
+		<!-- Event  -->
+		<div class="type-tribe_events post-2667 tribe-clearfix tribe-events-category-civic-meetings tribe-events-venue-2657">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Thu			</span>
+		
+		<span class="list-daynumber">16</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="index.html%3Fp=2667.html" rel="bookmark">Open Virtual Civic Meeting (Spring 2020)</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">July 16 @ 1:00 pm</span> - <span class="tribe-event-time">2:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Street, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div>
+
+		
+	
+		<!-- Event  -->
+		<div class="type-tribe_events post-2668 tribe-clearfix tribe-events-category-civic-meetings tribe-events-venue-2657">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Thu			</span>
+		
+		<span class="list-daynumber">23</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="index.html%3Fp=2668.html" rel="bookmark">Open Virtual Civic Meeting (Spring 2020)</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">July 23 @ 1:00 pm</span> - <span class="tribe-event-time">2:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Street, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div>
+
+		
+	
+		<!-- Event  -->
+		<div class="type-tribe_events post-2669 tribe-clearfix tribe-events-category-civic-meetings tribe-events-venue-2657">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Thu			</span>
+		
+		<span class="list-daynumber">30</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="index.html%3Fp=2669.html" rel="bookmark">Open Virtual Civic Meeting (Spring 2020)</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">July 30 @ 1:00 pm</span> - <span class="tribe-event-time">2:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Street, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div>
+
+		
+	
+		<p class="tribe-events-widget-link">
+		<a href="events.html" rel="bookmark">
+			View More&hellip;		</a>
+	</p>
+	
+</aside><script type="application/ld+json">
+[{"@context":"http://schema.org","@type":"Event","name":"Open Virtual Civic Meeting (Spring 2020)","description":"&lt;p&gt;Update: We\\'re going virtual! Join us from anywhere! You can download Zoom in advance here:\u00a0http://zoom.us/download Meeting details: 1pm US Eastern Time Join Zoom Meeting:\u00a0https://zoom.us/j/620149867 Meeting ID: 620 149 867 One tap mobile +19292056099,,620149867# US (New York) +16699006833,,620149867# US (San Jose) Dial by your location +1 929 205 6099 US (New York) +1 669 900 6833 US (San Jose) Meeting ID: 620 149 867 Find your local number:\u00a0https://zoom.us/u/abGKRLXrER &nbsp; During the semester we host weekly meetings [&hellip;]&lt;/p&gt;\\n","url":"https://civic.mit.edu/event/open-civic-meeting-spring-2020/2020-07-16/","startDate":"2020-07-16T13:00:00-04:00","endDate":"2020-07-16T14:30:00-04:00","location":{"@type":"Place","name":"","description":"","url":"https://civic.mit.edu/venue/2657/","address":{"@type":"PostalAddress","addressRegion":"MA","addressCountry":"United States"},"telephone":"","sameAs":""},"performer":"Organization"},{"@context":"http://schema.org","@type":"Event","name":"Open Virtual Civic Meeting (Spring 2020)","description":"&lt;p&gt;Update: We\\'re going virtual! Join us from anywhere! You can download Zoom in advance here:\u00a0http://zoom.us/download Meeting details: 1pm US Eastern Time Join Zoom Meeting:\u00a0https://zoom.us/j/620149867 Meeting ID: 620 149 867 One tap mobile +19292056099,,620149867# US (New York) +16699006833,,620149867# US (San Jose) Dial by your location +1 929 205 6099 US (New York) +1 669 900 6833 US (San Jose) Meeting ID: 620 149 867 Find your local number:\u00a0https://zoom.us/u/abGKRLXrER &nbsp; During the semester we host weekly meetings [&hellip;]&lt;/p&gt;\\n","url":"https://civic.mit.edu/event/open-civic-meeting-spring-2020/2020-07-23/","startDate":"2020-07-23T13:00:00-04:00","endDate":"2020-07-23T14:30:00-04:00","location":{"@type":"Place","name":"","description":"","url":"https://civic.mit.edu/venue/2657/","address":{"@type":"PostalAddress","addressRegion":"MA","addressCountry":"United States"},"telephone":"","sameAs":""},"performer":"Organization"},{"@context":"http://schema.org","@type":"Event","name":"Open Virtual Civic Meeting (Spring 2020)","description":"&lt;p&gt;Update: We\\'re going virtual! Join us from anywhere! You can download Zoom in advance here:\u00a0http://zoom.us/download Meeting details: 1pm US Eastern Time Join Zoom Meeting:\u00a0https://zoom.us/j/620149867 Meeting ID: 620 149 867 One tap mobile +19292056099,,620149867# US (New York) +16699006833,,620149867# US (San Jose) Dial by your location +1 929 205 6099 US (New York) +1 669 900 6833 US (San Jose) Meeting ID: 620 149 867 Find your local number:\u00a0https://zoom.us/u/abGKRLXrER &nbsp; During the semester we host weekly meetings [&hellip;]&lt;/p&gt;\\n","url":"https://civic.mit.edu/event/open-civic-meeting-spring-2020/2020-07-30/","startDate":"2020-07-30T13:00:00-04:00","endDate":"2020-07-30T14:30:00-04:00","location":{"@type":"Place","name":"","description":"","url":"https://civic.mit.edu/venue/2657/","address":{"@type":"PostalAddress","addressRegion":"MA","addressCountry":"United States"},"telephone":"","sameAs":""},"performer":"Organization"}]
+</script>          </div>
+                  </div>
+  </div>
+</div>
+<div id="colophon" class="colophon " >
+  <div class="container">
+    <div class="colophon__row row flex-row justify-content-between">
+      <div class="col-12 col-sm-auto">
+        <div id="footer__credits" class="footer__credits" >
+  <p class="czr-copyright">
+    <span class="czr-copyright-text">&copy;&nbsp;2020&nbsp;</span><a class="czr-copyright-link" href="index.html" title="MIT Center for Civic Media">MIT Center for Civic Media</a><span class="czr-rights-text">&nbsp;&ndash;&nbsp;All rights reserved</span>
+  </p>
+  <p class="czr-credits">
+    <span class="czr-designer">
+      <span class="czr-wp-powered"><span class="czr-wp-powered-text">Powered by&nbsp;</span><a class="czr-wp-powered-link fab fa-wordpress" title="Powered by WordPress" href="https://wordpress.org/" target="_blank" rel="noopener noreferrer"></a></span><span class="czr-designer-text">&nbsp;&ndash;&nbsp;Designed with the <a class="czr-designer-link" href="https://presscustomizr.com/customizr" title="Customizr theme">Customizr theme</a></span>
+    </span>
+  </p>
+</div>
+      </div>
+            <div class="col-12 col-sm-auto">
+        <div class="social-links">
+          <ul class="socials " >
+  <li ><a rel="nofollow noopener noreferrer" class="social-icon icon-feed"  title="Subscribe to my rss feed" aria-label="Subscribe to my rss feed" href="http://civic-homepage.wordpress.brownbag.me/feed/rss/"  target="_blank" ><i class="fas fa-rss"></i></a></li></ul>
+        </div>
+      </div>
+          </div>
+  </div>
+</div>
+</footer>
+    </div><!-- end #tc-page-wrap -->
+
+    <button class="btn czr-btt czr-btta right" ><i class="icn-up-small"></i></button>
+<script type='text/javascript'>
+var colomatduration = 'fast';
+var colomatslideEffect = 'slideFade';
+var colomatpauseInit = '';
+var colomattouchstart = '';
+</script>		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><script type='text/javascript' src='https://maps.google.com/maps/api/js?key=AIzaSyDNsicAsP6-VuGtAb1O9riI3oc_NOb7IOU&#038;ver=4.4.32'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var GeoLoc = {"ajaxurl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","nonce":"595356a5ba","map_view":"","pin_url":""};
+var GeoLoc = {"ajaxurl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","nonce":"595356a5ba","map_view":"","pin_url":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-calendar-pro/src/resources/js/tribe-events-ajax-maps.min.js%3Fver=4.4.32'></script>
+<script type='text/javascript' src='wp-includes/js/imagesloaded.min.js%3Fver=3.2.0'></script>
+<script type='text/javascript' src='wp-includes/js/masonry.min.js%3Fver=3.3.2'></script>
+<script type='text/javascript' src='wp-content/plugins/jquery-collapse-o-matic/js/collapse.js%3Fver=1.6.19'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/ui/core.min.js%3Fver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tve_dash_front = {"ajaxurl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","force_ajax_send":"","is_crawler":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/thrive-visual-editor/thrive-dashboard/js/dist/frontend.min.js%3Fver=2.2.17'></script>
+<script type='text/javascript' src='wp-includes/js/wp-embed.min.js%3Fver=5.4.2'></script>
+<script type="text/javascript">var tcb_post_lists=JSON.parse('[]');</script>  </body>
+  </html>

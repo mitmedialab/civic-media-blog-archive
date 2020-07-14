@@ -1,0 +1,9 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MIT Center for Civic Media - ECPv5.1.2.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MIT Center for Civic Media
+X-ORIGINAL-URL:https://civic.mit.edu
+X-WR-CALDESC:Events for MIT Center for Civic Media
+END:VCALENDAR

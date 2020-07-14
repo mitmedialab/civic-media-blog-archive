@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MIT Center for Civic Media - ECPv5.1.2.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MIT Center for Civic Media
+X-ORIGINAL-URL:https://civic.mit.edu
+X-WR-CALDESC:Events for MIT Center for Civic Media
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:20190310T070000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:20191103T060000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20190905T120000
+DTEND;TZID=America/New_York:20190905T130000
+DTSTAMP:20200714T002439
+CREATED:20190904T162257Z
+LAST-MODIFIED:20190904T162257Z
+UID:2552-1567684800-1567688400@civic.mit.edu
+SUMMARY:Stopping Ubiquitous Face Surveillance Before It's Too Late
+DESCRIPTION:Kade Crockford\, Director of the Technology for Liberty Program at the ACLU \nThursday\, September 5th\, @ 12pm\, Media Lab E15-344. Light lunch\, first come first serve. \nFace surveillance and other remote biometric monitoring technologies pose unprecedented risks to personal autonomy\, privacy\, and democracy. One researcher compared the tech to nuclear waste. Others have called it “the perfect tool for oppression.” Never before has a technology equipped governments with the power to automatically generate and store permanent\, detailed records of every person’s every public movement\, habit\, and association—until now. \nWe currently have not only an opportunity but also a responsibility to reject technological determinism\, and to implement strong democratic controls over the use of this perilous technology. During this talk\, Kade Crockford\, Director of the Technology for Liberty Program at the ACLU of Massachusetts will outline precisely what makes this technology different and dangerous\, how the ACLU and other advocates are fighting back\, options for law reform\, and how MIT affiliated folks can get involved. \n
+URL:https://civic.mit.edu/event/stopping-ubiquitous-face-surveillance-before-its-too-late/
+LOCATION:MIT Center for Civic Media\, 20 Ames St.\, Cambridge\, MA\, 02139\, United States
+CATEGORIES:Talks
+END:VEVENT
+END:VCALENDAR

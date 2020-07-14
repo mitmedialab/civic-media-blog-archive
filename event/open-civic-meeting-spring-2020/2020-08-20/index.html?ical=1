@@ -1,0 +1,37 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MIT Center for Civic Media - ECPv5.1.2.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MIT Center for Civic Media
+X-ORIGINAL-URL:https://civic.mit.edu
+X-WR-CALDESC:Events for MIT Center for Civic Media
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:20200308T070000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:20201101T060000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20200820T130000
+DTEND;TZID=America/New_York:20200820T143000
+DTSTAMP:20200713T201909
+CREATED:20200211T135528Z
+LAST-MODIFIED:20200507T175038Z
+UID:2672-1597928400-1597933800@civic.mit.edu
+SUMMARY:Open Virtual Civic Meeting (Spring 2020)
+DESCRIPTION:Update: We’re going virtual! Join us from anywhere! \nYou can download Zoom in advance here: http://zoom.us/download \nMeeting details:\n1pm US Eastern Time\nJoin Zoom Meeting: https://zoom.us/j/620149867\nMeeting ID: 620 149 867 \nOne tap mobile\n+19292056099\,\,620149867# US (New York)\n+16699006833\,\,620149867# US (San Jose) \nDial by your location\n+1 929 205 6099 US (New York)\n+1 669 900 6833 US (San Jose)\nMeeting ID: 620 149 867\nFind your local number: https://zoom.us/u/abGKRLXrER \n  \nDuring the semester we host weekly meetings every Thursday that are open to the public (except for the first Thursday of the month). This is a place to come with a question\, request for feedback\, or just to listen.  At the start of the meeting you can bid for time\, requesting things like a minute for an announcement or 5 minutes to introduce your project and ask for suggestions on folks to talk to about it. \n
+URL:https://civic.mit.edu/event/open-civic-meeting-spring-2020/2020-08-20/
+LOCATION:MA\, United States
+CATEGORIES:Civic Meetings
+END:VEVENT
+END:VCALENDAR

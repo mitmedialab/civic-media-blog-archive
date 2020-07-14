@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MIT Center for Civic Media - ECPv5.1.2.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MIT Center for Civic Media
+X-ORIGINAL-URL:https://civic.mit.edu
+X-WR-CALDESC:Events for MIT Center for Civic Media
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:20190310T070000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:20191103T060000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20190307T120000
+DTEND;TZID=America/New_York:20190307T130000
+DTSTAMP:20200713T202136
+CREATED:20190306T015012Z
+LAST-MODIFIED:20190306T015024Z
+UID:2453-1551960000-1551963600@civic.mit.edu
+SUMMARY:Lunch Talk: Reclaiming the Internet as a Force for the Common Good
+DESCRIPTION:Reclaiming the Internet as a Force for the Common Good: The PublicSpaces Coalition\nwith Geert-Jan Bogaerts \nThursday\, March 7\, 2019\n12:00pm – 1:00pm\nComparative Media Studies\, E15-318   (3rd floor of E15\, opposite side of the building from Civic!)\n20 Ames Street\, Cambridge\, MA 02412 \nPublicSpaces (publicspaces.net) is reclaiming the internet as a force for the common good by building\, deploying and supporting a software ecosystem that’s based on public values. We are advocating a new internet that strengthens the public domain. The goal is to solve the problem that our online lives depend on solutions that take care of shareholders instead of us. PublicSpaces promotes and provides alternative solutions. PublicSpaces is a European coalition of public media broadcasters\, musea\, schools and universities\, institutions of cultural heritage and health care. We hope that by aggregating the public’s culture in a public space\, and that by respecting the public’s right to privacy\, we can begin to restore some of the promise of the internet. \nGeert-Jan Bogaerts is the initiator of the PublicSpaces coalition and also heads the department of Innovation and Digital Media of Dutch public broadcaster VPRO\, and is also the principal at Raker\, a new media consultancy. Geert-Jan has taught at the University of Groningen\, lectured and headed workshops at various media and marketing companies\, and consulted on new media strategies. He is also a journalist and editor with 20+ years of experience in financial reporting and international political and economic affairs\, and as a correspondent with the EU/NATO in Brussels\, Belgium. \nLunch will be provided. \n  \nimage CC MusikAnimal\, Wikimedia Commons \n
+URL:https://civic.mit.edu/event/lunch-talk-reclaiming-the-internet-as-a-force-for-the-common-good/
+LOCATION:MIT Center for Civic Media\, 20 Ames St.\, Cambridge\, MA\, 02139\, United States
+CATEGORIES:Talks
+ATTACH;FMTTYPE=image/jpeg:https://civic.mit.edu/wp-content/uploads/sites/28/2019/03/Zuccotti_Park_at_night_October_2014_2VGvVWQ.JPG.1400x1400.jpg
+END:VEVENT
+END:VCALENDAR

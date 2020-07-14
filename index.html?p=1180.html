@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US" class="no-js">
+<!--<![endif]-->
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="profile"  href="https://gmpg.org/xfn/11" />
+  <link rel="pingback" href="https://civic.mit.edu/xmlrpc.php" />
+  <!-- scripts for IE8 and less  -->
+  <!--[if lt IE 9]>
+    <script src="https://civic.mit.edu/wp-content/themes/customizr/assets/front/js/libs/html5.js"></script>
+  <![endif]-->
+<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Uncovering Algorithms: Looking Inside the Facebook News Feed &#8211; MIT Center for Civic Media</title>
+<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+<link rel='dns-prefetch' href='https://s.w.org/' />
+<link rel="alternate" type="application/rss+xml" title="MIT Center for Civic Media &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="MIT Center for Civic Media &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="text/calendar" title="MIT Center for Civic Media &raquo; iCal Feed" href="events/index.html%3Fical=1" />
+<link rel="alternate" type="application/rss+xml" title="MIT Center for Civic Media &raquo; Uncovering Algorithms: Looking Inside the Facebook News Feed Comments Feed" href="2014/07/22/uncovering-algorithms-looking-inside-the-facebook-news-feed/feed/index.html" />
+	<script type="text/javascript">
+		var ajaxurl = 'https://civic.mit.edu/wp-admin/admin-ajax.php';
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/civic.mit.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='userlist-style-css'  href='wp-content/plugins/wp-users-list-widget/css/style.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='widget-calendar-pro-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/widget-calendar-full.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe_events-widget-calendar-pro-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/widget-calendar-theme.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='czr-gfonts-css'  href='https://fonts.googleapis.com/css?family=Sintony%7CPoppins&amp;display=swap' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-full-pro-calendar-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-full.min.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-pro-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-theme.min.css%3Fver=4.4.32.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-pro-mobile-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-theme-mobile.min.css%3Fver=4.4.32.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css'  href='wp-content/plugins/the-events-calendar/common/src/resources/css/common-skeleton.min.css%3Fver=4.12.3.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-tooltip-css'  href='wp-content/plugins/the-events-calendar/common/src/resources/css/tooltip.min.css%3Fver=4.12.3.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-full-pro-mobile-style-css'  href='wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-full-mobile.min.css%3Fver=4.4.32.css' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='wp-block-library-css'  href='wp-includes/css/dist/block-library/style.min.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-blog-designer-fontawesome-stylesheets-css'  href='wp-content/plugins/blog-designer/css/fontawesome-all.min.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-blog-designer-css-stylesheets-css'  href='wp-content/plugins/blog-designer/css/designer_css.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='collapseomatic-css-css'  href='wp-content/plugins/jquery-collapse-o-matic/light_style.css%3Fver=1.6.css' type='text/css' media='all' />
+<link rel='stylesheet' id='customizr-main-css'  href='wp-content/themes/customizr/assets/front/css/style.min.css%3Fver=4.2.7.css' type='text/css' media='all' />
+<style id='customizr-main-inline-css' type='text/css'>
+::-moz-selection{background-color:#0a2882}::selection{background-color:#0a2882}a,.btn-skin:active,.btn-skin:focus,.btn-skin:hover,.btn-skin.inverted,.grid-container__classic .post-type__icon,.post-type__icon:hover .icn-format,.grid-container__classic .post-type__icon:hover .icn-format,[class*='grid-container__'] .entry-title a.czr-title:hover,input[type=checkbox]:checked::before{color:#0a2882}.czr-css-loader > div ,.btn-skin,.btn-skin:active,.btn-skin:focus,.btn-skin:hover,.btn-skin-h-dark,.btn-skin-h-dark.inverted:active,.btn-skin-h-dark.inverted:focus,.btn-skin-h-dark.inverted:hover{border-color:#0a2882}.tc-header.border-top{border-top-color:#0a2882}[class*='grid-container__'] .entry-title a:hover::after,.grid-container__classic .post-type__icon,.btn-skin,.btn-skin.inverted:active,.btn-skin.inverted:focus,.btn-skin.inverted:hover,.btn-skin-h-dark,.btn-skin-h-dark.inverted:active,.btn-skin-h-dark.inverted:focus,.btn-skin-h-dark.inverted:hover,.sidebar .widget-title::after,input[type=radio]:checked::before{background-color:#0a2882}.btn-skin-light:active,.btn-skin-light:focus,.btn-skin-light:hover,.btn-skin-light.inverted{color:#0f3ec9}input:not([type='submit']):not([type='button']):not([type='number']):not([type='checkbox']):not([type='radio']):focus,textarea:focus,.btn-skin-light,.btn-skin-light.inverted,.btn-skin-light:active,.btn-skin-light:focus,.btn-skin-light:hover,.btn-skin-light.inverted:active,.btn-skin-light.inverted:focus,.btn-skin-light.inverted:hover{border-color:#0f3ec9}.btn-skin-light,.btn-skin-light.inverted:active,.btn-skin-light.inverted:focus,.btn-skin-light.inverted:hover{background-color:#0f3ec9}.btn-skin-lightest:active,.btn-skin-lightest:focus,.btn-skin-lightest:hover,.btn-skin-lightest.inverted{color:#1145e1}.btn-skin-lightest,.btn-skin-lightest.inverted,.btn-skin-lightest:active,.btn-skin-lightest:focus,.btn-skin-lightest:hover,.btn-skin-lightest.inverted:active,.btn-skin-lightest.inverted:focus,.btn-skin-lightest.inverted:hover{border-color:#1145e1}.btn-skin-lightest,.btn-skin-lightest.inverted:active,.btn-skin-lightest.inverted:focus,.btn-skin-lightest.inverted:hover{background-color:#1145e1}.pagination,a:hover,a:focus,a:active,.btn-skin-dark:active,.btn-skin-dark:focus,.btn-skin-dark:hover,.btn-skin-dark.inverted,.btn-skin-dark-oh:active,.btn-skin-dark-oh:focus,.btn-skin-dark-oh:hover,.post-info a:not(.btn):hover,.grid-container__classic .post-type__icon .icn-format,[class*='grid-container__'] .hover .entry-title a,.widget-area a:not(.btn):hover,a.czr-format-link:hover,.format-link.hover a.czr-format-link,button[type=submit]:hover,button[type=submit]:active,button[type=submit]:focus,input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus,.tabs .nav-link:hover,.tabs .nav-link.active,.tabs .nav-link.active:hover,.tabs .nav-link.active:focus{color:#061749}.grid-container__classic.tc-grid-border .grid__item,.btn-skin-dark,.btn-skin-dark.inverted,button[type=submit],input[type=submit],.btn-skin-dark:active,.btn-skin-dark:focus,.btn-skin-dark:hover,.btn-skin-dark.inverted:active,.btn-skin-dark.inverted:focus,.btn-skin-dark.inverted:hover,.btn-skin-h-dark:active,.btn-skin-h-dark:focus,.btn-skin-h-dark:hover,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-dark-oh:active,.btn-skin-dark-oh:focus,.btn-skin-dark-oh:hover,.btn-skin-dark-oh.inverted:active,.btn-skin-dark-oh.inverted:focus,.btn-skin-dark-oh.inverted:hover,button[type=submit]:hover,button[type=submit]:active,button[type=submit]:focus,input[type=submit]:hover,input[type=submit]:active,input[type=submit]:focus{border-color:#061749}.btn-skin-dark,.btn-skin-dark.inverted:active,.btn-skin-dark.inverted:focus,.btn-skin-dark.inverted:hover,.btn-skin-h-dark:active,.btn-skin-h-dark:focus,.btn-skin-h-dark:hover,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-h-dark.inverted,.btn-skin-dark-oh.inverted:active,.btn-skin-dark-oh.inverted:focus,.btn-skin-dark-oh.inverted:hover,.grid-container__classic .post-type__icon:hover,button[type=submit],input[type=submit],.czr-link-hover-underline .widgets-list-layout-links a:not(.btn)::before,.czr-link-hover-underline .widget_archive a:not(.btn)::before,.czr-link-hover-underline .widget_nav_menu a:not(.btn)::before,.czr-link-hover-underline .widget_rss ul a:not(.btn)::before,.czr-link-hover-underline .widget_recent_entries a:not(.btn)::before,.czr-link-hover-underline .widget_categories a:not(.btn)::before,.czr-link-hover-underline .widget_meta a:not(.btn)::before,.czr-link-hover-underline .widget_recent_comments a:not(.btn)::before,.czr-link-hover-underline .widget_pages a:not(.btn)::before,.czr-link-hover-underline .widget_calendar a:not(.btn)::before,[class*='grid-container__'] .hover .entry-title a::after,a.czr-format-link::before,.comment-author a::before,.comment-link::before,.tabs .nav-link.active::before{background-color:#061749}.btn-skin-dark-shaded:active,.btn-skin-dark-shaded:focus,.btn-skin-dark-shaded:hover,.btn-skin-dark-shaded.inverted{background-color:rgba(6,23,73,0.2)}.btn-skin-dark-shaded,.btn-skin-dark-shaded.inverted:active,.btn-skin-dark-shaded.inverted:focus,.btn-skin-dark-shaded.inverted:hover{background-color:rgba(6,23,73,0.8)}.navbar-brand,.header-tagline,h1,h2,h3,.tc-dropcap { font-family : 'Sintony'; }
+body { font-family : 'Poppins'; }
+
+.tc-header.border-top { border-top-width: 5px; border-top-style: solid }
+.tc-singular-thumbnail-wrapper .entry-media__wrapper {
+                max-height: 200px;
+                height :200px
+              }
+
+@media (min-width: 576px ){
+.tc-singular-thumbnail-wrapper .entry-media__wrapper {
+                  max-height: 500px;
+                  height :500px
+                }
+}
+
+#czr-push-footer { display: none; visibility: hidden; }
+        .czr-sticky-footer #czr-push-footer.sticky-footer-enabled { display: block; }
+        
+</style>
+<link rel='stylesheet' id='dry_awp_theme_style-css'  href='wp-content/plugins/advanced-wp-columns/assets/css/awp-columns.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tmm-css'  href='wp-content/plugins/team-members/inc/css/tmm_style.css%3Fver=5.4.2.css' type='text/css' media='all' />
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.js%3Fver=1.12.4-wp'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrate.min.js%3Fver=1.4.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/vendor/jquery-resize/jquery.ba-resize.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/vendor/jquery-placeholder/jquery.placeholder.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/common/vendor/momentjs/moment.min.js%3Fver=4.12.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tribe_js_config = {"permalink_settings":"\/%year%\/%monthnum%\/%day%\/%postname%\/","events_post_type":"tribe_events","events_base":"https:\/\/civic.mit.edu\/events\/","update_urls":{"shortcode":{"list":true,"month":true,"day":true}},"debug":""};
+var tribe_js_config = {"permalink_settings":"\/%year%\/%monthnum%\/%day%\/%postname%\/","events_post_type":"tribe_events","events_base":"https:\/\/civic.mit.edu\/events\/","update_urls":{"shortcode":{"list":true,"month":true,"day":true}},"debug":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/the-events-calendar/src/resources/js/tribe-events.min.js%3Fver=5.1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var TribeEventsPro = {"geocenter":{"max_lat":0,"max_lng":0,"min_lat":0,"min_lng":0},"map_tooltip_event":"Event: ","map_tooltip_address":"Address: "};
+var TribeEventsPro = {"geocenter":{"max_lat":0,"max_lng":0,"min_lat":0,"min_lng":0},"map_tooltip_event":"Event: ","map_tooltip_address":"Address: "};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-calendar-pro/src/resources/js/tribe-events-pro.min.js%3Fver=4.4.32'></script>
+<script type='text/javascript' src='wp-content/plugins/blog-designer/js/designer.js%3Fver=5.4.2'></script>
+<script type='text/javascript' src='wp-content/themes/customizr/assets/front/js/libs/modernizr.min.js%3Fver=4.2.7'></script>
+<script src='wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-before.js'></script>
+<script type='text/javascript' src='wp-includes/js/underscore.min.js%3Fver=1.8.3'></script>
+<script src='wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-after.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CZRParams = {"assetsPath":"https:\/\/civic.mit.edu\/wp-content\/themes\/customizr\/assets\/front\/","mainScriptUrl":"https:\/\/civic.mit.edu\/wp-content\/themes\/customizr\/assets\/front\/js\/tc-scripts.min.js?4.2.7","deferFontAwesome":"1","fontAwesomeUrl":"https:\/\/civic.mit.edu\/wp-content\/themes\/customizr\/assets\/shared\/fonts\/fa\/css\/fontawesome-all.min.css?4.2.7","_disabled":[],"centerSliderImg":"1","isLightBoxEnabled":"1","SmoothScroll":{"Enabled":true,"Options":{"touchpadSupport":false}},"isAnchorScrollEnabled":"","anchorSmoothScrollExclude":{"simple":["[class*=edd]",".carousel-control","[data-toggle=\"modal\"]","[data-toggle=\"dropdown\"]","[data-toggle=\"czr-dropdown\"]","[data-toggle=\"tooltip\"]","[data-toggle=\"popover\"]","[data-toggle=\"collapse\"]","[data-toggle=\"czr-collapse\"]","[data-toggle=\"tab\"]","[data-toggle=\"pill\"]","[data-toggle=\"czr-pill\"]","[class*=upme]","[class*=um-]"],"deep":{"classes":[],"ids":[]}},"timerOnScrollAllBrowsers":"1","centerAllImg":"1","HasComments":"","LoadModernizr":"1","stickyHeader":"","extLinksStyle":"","extLinksTargetExt":"","extLinksSkipSelectors":{"classes":["btn","button"],"ids":[]},"dropcapEnabled":"","dropcapWhere":{"post":"","page":""},"dropcapMinWords":"","dropcapSkipSelectors":{"tags":["IMG","IFRAME","H1","H2","H3","H4","H5","H6","BLOCKQUOTE","UL","OL"],"classes":["btn"],"id":[]},"imgSmartLoadEnabled":"","imgSmartLoadOpts":{"parentSelectors":["[class*=grid-container], .article-container",".__before_main_wrapper",".widget-front",".post-related-articles",".tc-singular-thumbnail-wrapper"],"opts":{"excludeImg":[".tc-holder-img"]}},"imgSmartLoadsForSliders":"1","pluginCompats":[],"isWPMobile":"","menuStickyUserSettings":{"desktop":"stick_up","mobile":"stick_up"},"adminAjaxUrl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","ajaxUrl":"https:\/\/civic.mit.edu\/?czrajax=1","frontNonce":{"id":"CZRFrontNonce","handle":"09b8185493"},"isDevMode":"","isModernStyle":"1","i18n":{"Permanently dismiss":"Permanently dismiss"},"frontNotifications":{"welcome":{"enabled":false,"content":"","dismissAction":"dismiss_welcome_note_front"}},"preloadGfonts":"","googleFonts":"Sintony%7CPoppins"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/themes/customizr/assets/front/js/tc-scripts.min.js%3Fver=4.2.7' defer></script>
+<link rel='https://api.w.org/' href='wp-json/index.html' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='HOPE X: Themes and Reflections' href='index.html%3Fp=350.html' />
+<link rel='next' title='Emoji Karaoke at the Boston Internet Research Party' href='index.html%3Fp=1889.html' />
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel="canonical" href="index.html%3Fp=1180.html" />
+<link rel='shortlink' href='index.html%3Fp=1180.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fcivic.mit.edu%252F2014%252F07%252F22%252Funcovering-algorithms-looking-inside-the-facebook-news-feed%252F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed%3Furl=https:%252F%252Fcivic.mit.edu%252F2014%252F07%252F22%252Funcovering-algorithms-looking-inside-the-facebook-news-feed%252F&amp;format=xml" />
+<style type="text/css" id="tve_global_variables">:root{}</style><script src='https://wordpress.brownbag.me/?dm=92dfdf7b65c23102d23f0f69d602eef7&amp;action=load&amp;blogid=28&amp;siteid=1&amp;t=1376445697&amp;back=https%3A%2F%2Fcivic.mit.edu%2F2014%2F07%2F22%2Funcovering-algorithms-looking-inside-the-facebook-news-feed%2F' type='text/javascript'></script><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://civic.mit.edu"><link rel="https://theeventscalendar.com/" href="wp-json/tribe/events/v1/index.html" /><!-- All in one Favicon 4.7 --><style type="text/css" id="thrive-default-styles"></style><link rel="icon" href="wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-32x32.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-180x180.png" />
+<meta name="msapplication-TileImage" content="https://civic.mit.edu/wp-content/uploads/sites/28/2018/03/cropped-CivicMedia_Symbol_K_RGB-270x270.png" />
+</head>
+
+  <body class="post-template-default single single-post postid-1180 single-format-standard wp-embed-responsive tribe-no-js czr-link-hover-underline header-skin-light footer-skin-dark czr-no-sidebar tc-center-images czr-full-layout czr-sticky-footer">
+          <a class="screen-reader-text skip-link" href="index.html%3Fp=1180.html#content">Skip to content</a>
+    
+    
+    <div id="tc-page-wrap" class="">
+
+      <header class="tpnav-header__header tc-header sl-logo_left sticky-brand-shrink-on sticky-transparent border-top czr-submenu-fade czr-submenu-move" >
+        <div class="primary-navbar__wrapper d-none d-lg-block has-horizontal-menu desktop-sticky" >
+  <div class="container">
+    <div class="row align-items-center flex-row primary-navbar__row">
+      <div class="branding__container col col-auto" >
+  <div class="branding align-items-center flex-column ">
+    <div class="branding-row d-flex align-self-start flex-row align-items-center">
+      <div class="navbar-brand col-auto " >
+  <a class="navbar-brand-sitelogo" href="index.html"  aria-label="MIT Center for Civic Media | Creating Technology for Social Change" >
+    <img src="wp-content/uploads/sites/28/2018/01/cropped-cropped-CivicMedia_Logo_K_RGB-1.png" alt="Back Home" class="" width="248" height="149" style="max-width:250px;max-height:100px" data-no-retina>  </a>
+</div>
+      </div>
+    <span class="header-tagline " >
+  Creating Technology for Social Change</span>
+
+  </div>
+</div>
+      <div class="primary-nav__container justify-content-lg-around col col-lg-auto flex-lg-column" >
+  <div class="primary-nav__wrapper flex-lg-row align-items-center justify-content-end">
+              <nav class="primary-nav__nav col" id="primary-nav">
+          <div class="nav__menu-wrapper primary-nav__menu-wrapper justify-content-end czr-open-on-hover" >
+<ul id="main-menu" class="primary-nav__menu regular-nav nav__menu nav"><li id="menu-item-20" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20"><a href="index.html" class="nav__link"><span class="nav__title">Home</span></a></li>
+<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://www.media.mit.edu/groups/civic-media/projects/" class="nav__link"><span class="nav__title">Projects</span></a></li>
+<li id="menu-item-2213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2213"><a href="events.html" class="nav__link"><span class="nav__title">Events</span></a></li>
+<li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="index.html%3Fp=4.html" class="nav__link"><span class="nav__title">Teaching</span></a></li>
+<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="index.html%3Fp=34.html" class="nav__link"><span class="nav__title">Team</span></a></li>
+<li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-98"><a href="blog.html" class="nav__link"><span class="nav__title">Blog</span></a></li>
+<li id="menu-item-2547" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2547"><a href="index.html%3Fp=2546.html" class="nav__link"><span class="nav__title">Academic Publications</span></a></li>
+</ul></div>        </nav>
+    <div class="primary-nav__utils nav__utils col-auto" >
+    <ul class="nav utils flex-row flex-nowrap regular-nav">
+      <li class="nav__search " >
+  <a href="index.html%3Fp=1180.html#" class="search-toggle_btn icn-search czr-overlay-toggle_btn"  aria-expanded="false"><span class="sr-only">Search</span></a>
+        <div class="czr-search-expand">
+      <div class="czr-search-expand-inner"><div class="search-form__container " >
+  <form action="index.html" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5f0ccda404c39" id="lsearch-5f0ccda404c39">
+        <span class="screen-reader-text">Search</span>
+        <input id="s-5f0ccda404c39" class="form-control czr-search-field" name="s" type="search" value="" aria-describedby="lsearch-5f0ccda404c39" placeholder="Search &hellip;">
+      </label>
+      <button type="submit" class="button"><i class="icn-search"></i><span class="screen-reader-text">Search &hellip;</span></button>
+    </div>
+  </form>
+</div></div>
+    </div>
+    </li>
+    </ul>
+</div>  </div>
+</div>
+    </div>
+  </div>
+</div>    <div class="mobile-navbar__wrapper d-lg-none mobile-sticky" >
+    <div class="branding__container justify-content-between align-items-center container" >
+  <div class="branding flex-column">
+    <div class="branding-row d-flex align-self-start flex-row align-items-center">
+      <div class="navbar-brand col-auto " >
+  <a class="navbar-brand-sitelogo" href="index.html"  aria-label="MIT Center for Civic Media | Creating Technology for Social Change" >
+    <img src="wp-content/uploads/sites/28/2018/01/cropped-cropped-CivicMedia_Logo_K_RGB-1.png" alt="Back Home" class="" width="248" height="149" style="max-width:250px;max-height:100px" data-no-retina>  </a>
+</div>
+    </div>
+      </div>
+  <div class="mobile-utils__wrapper nav__utils regular-nav">
+    <ul class="nav utils row flex-row flex-nowrap">
+      <li class="nav__search " >
+  <a href="index.html%3Fp=1180.html#" class="search-toggle_btn icn-search czr-dropdown" data-aria-haspopup="true" aria-expanded="false"><span class="sr-only">Search</span></a>
+        <div class="czr-search-expand">
+      <div class="czr-search-expand-inner"><div class="search-form__container " >
+  <form action="index.html" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5f0ccda405125" id="lsearch-5f0ccda405125">
+        <span class="screen-reader-text">Search</span>
+        <input id="s-5f0ccda405125" class="form-control czr-search-field" name="s" type="search" value="" aria-describedby="lsearch-5f0ccda405125" placeholder="Search &hellip;">
+      </label>
+      <button type="submit" class="button"><i class="icn-search"></i><span class="screen-reader-text">Search &hellip;</span></button>
+    </div>
+  </form>
+</div></div>
+    </div>
+        <ul class="dropdown-menu czr-dropdown-menu">
+      <li class="header-search__container container">
+  <div class="search-form__container " >
+  <form action="index.html" method="get" class="czr-form search-form">
+    <div class="form-group czr-focus">
+            <label for="s-5f0ccda405298" id="lsearch-5f0ccda405298">
+        <span class="screen-reader-text">Search</span>
+        <input id="s-5f0ccda405298" class="form-control czr-search-field" name="s" type="search" value="" aria-describedby="lsearch-5f0ccda405298" placeholder="Search &hellip;">
+      </label>
+      <button type="submit" class="button"><i class="icn-search"></i><span class="screen-reader-text">Search &hellip;</span></button>
+    </div>
+  </form>
+</div></li>    </ul>
+  </li>
+<li class="hamburger-toggler__container " >
+  <button class="ham-toggler-menu czr-collapsed" data-toggle="czr-collapse" data-target="#mobile-nav"><span class="ham__toggler-span-wrapper"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></span><span class="screen-reader-text">Menu</span></button>
+</li>
+    </ul>
+  </div>
+</div>
+<div class="mobile-nav__container " >
+   <nav class="mobile-nav__nav flex-column czr-collapse" id="mobile-nav">
+      <div class="mobile-nav__inner container">
+      <div class="nav__menu-wrapper mobile-nav__menu-wrapper czr-open-on-click" >
+<ul id="mobile-nav-menu" class="mobile-nav__menu vertical-nav nav__menu flex-column nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-20"><a href="index.html" class="nav__link"><span class="nav__title">Home</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://www.media.mit.edu/groups/civic-media/projects/" class="nav__link"><span class="nav__title">Projects</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2213"><a href="events.html" class="nav__link"><span class="nav__title">Events</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22"><a href="index.html%3Fp=4.html" class="nav__link"><span class="nav__title">Teaching</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="index.html%3Fp=34.html" class="nav__link"><span class="nav__title">Team</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-98"><a href="blog.html" class="nav__link"><span class="nav__title">Blog</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2547"><a href="index.html%3Fp=2546.html" class="nav__link"><span class="nav__title">Academic Publications</span></a></li>
+</ul></div>      </div>
+  </nav>
+</div></div></header>
+
+
+  
+    <div id="main-wrapper" class="section">
+
+                      
+
+          
+          <div class="container" role="main">
+
+            
+            <div class="flex-row row column-content-wrapper">
+
+                
+                <div id="content" class="col-12 article-container">
+
+                  <article id="post-1180" class="post-1180 post type-post status-publish format-standard czr-hentry" >
+    <header class="entry-header " >
+  <div class="entry-header-inner">
+            <h1 class="entry-title">Uncovering Algorithms: Looking Inside the Facebook News Feed</h1>
+        <div class="header-bottom">
+      <div class="post-info">
+                  <span class="entry-meta">
+        <span class="author-meta">by <span class="author vcard"><span class="author_name"><a class="url fn n" href="author/natematias/index.html" title="View all posts by natematias" rel="author">natematias</a></span></span></span><span class="v-separator">|</span>Published <a href="2014/07/22/index.html" title="3:08 pm" rel="bookmark"><time class="entry-date published updated" datetime="July 22, 2014">July 22, 2014</time></a></span>      </div>
+    </div>
+      </div>
+</header>  <div class="post-entry tc-content-inner">
+    <section class="post-content entry-content " >
+            <div class="czr-wp-the-content">
+        <p>How can the public learn the role of algorithms in their daily lives, evaluating the law and ethicality of systems like the Facebook NewsFeed, search engines, or airline booking systems? Today, the Berkman Center hosted a conversation about the idea of social science audits of algorithms. Presenting were:</p>
+<ul>
+<li><a href="https://www.si.umich.edu/people/christian-sandvig">Christian Sandvig</a> is a Research Professor and Associate Professor in Communication Studies and at the School of Information at the University of Michigan, where he specializes in research investigating the development of Internet infrastructure and public policy. His current research involves the study of information infrastructures that depend upon the algorithmic selection of content.
+</li>
+<li><a href="http://social.cs.uiuc.edu/people/karriekarahalios.html">Karrie Karahalios</a> is an associate professor in computer science at the University of Illinois where she heads the Social Spaces Group. Her work focuses on the interaction between people and the social cues they emit and perceive in face-to-face and mediated electronic spaces.
+</li>
+<li>Cedric Langbort is an Associate Professor of Aerospace Engineering and a member of the Information Trust Institute and the Decision and Control Group of the Coordinated Science Laboratory at the University of Illinois.</li>
+</ul>
+<p><a href="http://imgur.com/nBiOwX5"><img src="http://i.imgur.com/nBiOwX5.jpg" title="Hosted by imgur.com" width="500"/></a></p>
+<p>Christian tells us teh story of <a href="http://en.wikipedia.org/wiki/Sabre_(computer_system)">SABRE system</a>, from the 1960s, one of the first large scale applications of commercial computing. It was the largest non-governmental computer network in the world, and it managed airline bookings. American Airlines distributed terminals to ticket agents and travel agents &#8212; allowing people to book flights on other airlines. American Airlines, who paid for SABRE, was led by Bob Crandall, who was controversial because the SABRE system seemed to privilege American Airlines flights over other flights. This launched a famous anti-trust investigation against AA. When Crandall testified before congress about the system, he said:</p>
+<blockquote>
+<p>&#8220;The preferential display of our flights, and the corresponding increase in our market share, is the competitive raison d&#8217;etre for having created the [SABRE] system in the first place&#8221;</p>
+</blockquote>
+<p>In the Crandall theory of algorithmic material, one expects the system to be rigged. With Facebook, we&#8217;re seeing that people expect it the algorithm to be fair. Our world is now awash in algorithmically created content, says Christian, and we often have uncertainty about what these systems are doing. A chorus of scholarship is now claiming that algorithmic content is important, and we need to know more about how these algorithms work. Although many of us want to know how it works, it&#8217;s hard to find out because we all have a personalized experience.</p>
+<p><a href="http://infosci.cornell.edu/faculty/tarleton-gillespie">Gillespie</a>, <a href="http://www.nyu.edu/projects/nissenbaum/current_research_projects.html">Nissenbaum</a>, <a href="http://www.newrepublic.com/article/117878/information-fiduciary-solution-facebook-digital-gerrymandering">Zittrain</a>, <a href="http://solon.barocas.org/">Barocas</a>, <a href="http://www.hup.harvard.edu/catalog.php?isbn=9780674368279">Pasquale</a> and others have been writing and saying what should we do? Christian and his colleagues offer to answer the following questions:</p>
+<p><strong>1. How can research on algorithms proceed without access to the algorithm?</strong></p>
+<p>Then, initial results from a study about the Facebook news feed, investigating:</p>
+<p><strong>2. What is the algorithm doing for a particular person?</strong><br /><strong>3. How should we usefully visualize it?</strong><br /><strong>4. How do people make sense of the algorithm?</strong></p>
+<p>In a nutshell, Sandvig and his colleagues propose the idea of <strong>Social Science Audits of Algorithms</strong>. The Social Science audit was pioneered in the housing sector to detect racial discrimination. In these contexts, you send testers to rent and buy apartments to see if it&#8217;s successful. </p>
+<p><a href="http://imgur.com/L0Lr3QI"><img src="http://i.imgur.com/L0Lr3QI.gif" title="Hosted by imgur.com" width="500"/></a></p>
+<p>One famous recent audit is the &#8220;<a href="http://www.nytimes.com/2014/05/11/opinion/sunday/professors-are-prejudiced-too.html">Professors are Prejudiced Too</a>&#8221; study that requested meetings with professors and varied the name on the message. They found that if you were a woman or a member of a racial minority, you were less likely to get a response.</p>
+<p><strong>What&#8217;s an algorithm audit?</strong> Sandvig offers five illustrative research designs, with Facebook as an example but not the focus.</p>
+<p><a href="http://imgur.com/5UwCRRZ"><img src="http://i.imgur.com/5UwCRRZ.png" title="Hosted by imgur.com" width="500"/></a></p>
+<p>The first approach is to <strong>get the code</strong>, which Pasquale tends to argue for. Once you have the code however, what would you do with it? It changes all the time, it&#8217;s lengthy, we might agree what certain parts of the algorithm are doing, but we couldn&#8217;t use it to predict outcomes unless we had all of Google&#8217;s data. There are some instances where it might be useful, but generally having a public algorithm isn&#8217;t an answer to the concerns. Code for some platforms, like Reddit, or the Netflix prize winners are public. Unfortunately, publicizing the algorithm might help people we don&#8217;t want to help, like spammers and hackers. </p>
+<p>A second approach is to <strong>ask the users</strong> themselves. Services like consumer reports used to send surveys to car owners, asking them when their car broke down. We might think of an interesting algorithmic investigation that would find users and ask questions. One advantage is that it might be important to know what the users <em>think</em> the algorithm is doing, especially if users are modifying their behaviour based on what they think the algorithm is doing. The disadvantage with a platform like Facebook, it&#8217;s difficult to ask very large numbers of people very specific questions like &#8220;seven days ago, did your news feed have fewer words&#8221;?</p>
+<p><a href="http://en.wikipedia.org/wiki/File:Gustave_Caillebotte_-_The_Floor_Planers_-_Google_Art_Project.jpg" data-lb-type="grouped-post"><img src="http://i.imgur.com/p9Fe9Dd.jpg" title="Hosted by imgur.com" width="500"/></a><br /><em>The Floor Planers</em>, by Gustave Caillebotte</p>
+<p>Thirdly, you could try to <strong>scrape everything</strong>. The major problem with this is that audit studies have an adversarial relationship, and this might break the terms of service and also be prosecuted under computer fraud laws. Legal advisors told Christian&#8217;s team that they should avoid this approach.</p>
+<p>Fourthly, auditors could use <strong>sock puppets</strong>, user accounts that the researcher inserts into the system, testing interventions. This approach also faces the possibility of prosecution under computer fraud laws. It also may not be ethical, since you&#8217;re inserting fake data into the site.</p>
+<p><a href="http://biddingfortravel.yuku.com/"><img src="http://i.imgur.com/1i6ABiJ.png" title="Hosted by imgur.com" width="500"/></a></p>
+<p>Christian argues for a <strong>Collaborative Audit</strong>. He points us to <a href="http://biddingfortravel.yuku.com">Bidding for Travel</a>, a site where people collaborate to understand how Priceline works to get the best deals. Sandvig suggests that a software assisted technology could organize a large number of users to collaborate on an audit of social media.</p>
+<p><strong>Designing a Collaborative Audit</strong></p>
+<p>To start, Karrie Karahalios and her team organized a small group to test Facebook in a series of pilot studies to test the Facebook metrics system. They then tested a visualization that showed gradstudents how the Facebook News Feed showed. Even gradstudents didn&#8217;t realie that they weren&#8217;t seeing everyone&#8217;s feeds. Borrowing from Kevin Lynch research on &#8220;Wayfinding&#8221; which studied invisible processes in urban design, they created surveys for users that would expose hidden algorithmic processes with social media prompts and the Facebook API.</p>
+<p>The team brought 40 people into the lab, gave them a pre-interview to show them Facebook usage, showed them a prompt, and then did a followup interview. People really wanted to talk about their experience. The study ran from April &#8211; November 2013, with a followup in June 2014. They collected basic demographic information and asked them about their behaviour on Facebook. </p>
+<p>The FeedVis project shows users on the left all posts by friends on your specific network. On the right are the posts that actually appear on your newsfeed. The projects that appear in both are highlighted.  Users were astonished by how long the left column was and how many things are hidden from Facebook. For most subjects, this was the first time they were aware of the existence of an algorithm. 37.5% of participants were aware, and 62.5% were not aware or uncertain.</p>
+<p><a href="http://imgur.com/q14ZLqB"><img src="http://i.imgur.com/q14ZLqB.jpg" title="Hosted by imgur.com" width="500"/></a></p>
+<p>FeedVis also showed users how many posts they saw from each user&#8211; seeing which people appear commonly on their feed and whose posts are hidden. Often, people became very upset when posts from family members and loved ones were hidden. </p>
+<p><a href="http://imgur.com/slAWmD3"><img src="http://i.imgur.com/slAWmD3.jpg" title="Hosted by imgur.com" width="500"/></a></p>
+<p>Aggregating these lists, the users were invited to move people around to indicate who they wanted to see more from, and then show posts that might have been shown otherwise. They asked those users if they would have preferred to see those posts or not.</p>
+<p><a href="http://imgur.com/OpGZzIu"><img src="http://i.imgur.com/OpGZzIu.jpg" title="Hosted by imgur.com" width="500"/></a></p>
+<p>When reacting to FeedVis, some participants thought that the filtered NewsFeed was a necessity&#8211; they had too many friends to keep track of them. Another group of comments focused on discrepancies between the newsfeed and all the posts. A further group reflected on what they might have needed to see more from a person. Many users assumed they might have needed to scroll down further. Among those who weren&#8217;t familiar with the algorithm, many just assumed that their friends had stopped posting.</p>
+<p>Other users thought that membership duration, seen content, or friendship network size might influence people&#8217;s awareness. They didn&#8217;t. Factors that did influence awareness were usage frequency and whether someone had used the analytics packages on Facebook Pages.</p>
+<p>Over the course of the study and visual narrative, participants were initially very shocked and angry. Over time, they started reflecting on the nature of the algorithms, creating theories for how the feed might have filtered their information. Some people looked outside Facebook, wondering if their reading behavior on other sites might influence their reading behavior.</p>
+<p>In the FeedVis system, users were content with with the information on their news feed, but they did shift users into more </p>
+<p>After learning about the algorithm, when users went back to Facebook, they reported using Facebook&#8217;s features more, switching more often between top stories and most recent stories features, being more circumspect about their likes, and even dropping friends. Since that time, some users became more involved and spent more time on Facebook.</p>
+<p>Next up is Cedric Langbort, who summarizes the findings and future of algorithmic audits. The FeedVis system had a greater impact. The team is now scaling up FeedVis to more users, and they&#8217;re hoping to do machine learning to test the Facebook algorithm. Along the way, they&#8217;ll have to figure out how to deal with their own issues around privacy and data sharing &#8212; with the payoff as a broad view of how the Facebook News Feed algorithm performs.</p>
+<p>Is it good or bad to give users insight into how their data is being used? This practice is gaining traction across companies: Both Google and Facebook now have features that explain what goes into a particular algorithm. Might the motive for this disclosure also matter? If companies like Facebook ask people to question algorithms, is this just a ploy to get more data, he asks.</p>
+<p>Cedric ends with a question, an admonishment, and a call to arms. He poses the following:</p>
+<li>What do users really need to know about algorithms? There&#8217;s value in telling people about these systems, but it may not be necessary to release the code. Perhaps a test drive could be more meaningful</li>
+<li><strong>Transparency Alone is not enough</strong>, says Cedric. It&#8217;s more important to hold companies accountable on their auditability</li>
+<li><strong>Create infrastructures for algorithm auditing</strong>, urges Cedric in his talk</li>
+<p><strong>Questions</strong><br />
+A participant asks about the ethics of this research -can anyone have access to the raw, unfiltered stream? Karrie explains that every participant came into the lab, signed a consent form, and then used a Facebook application created by the researchers, that accessed all the data of them and their friends. The questioner asks if all of us can use an app to see their raw feed. Karrie answers: yes, and they&#8217;re planning to release the software soon.</p>
+<p><a href="https://twitter.com/peteyreplies">Chris Peterson</a> asks: what is the &#8220;all&#8221; in the all? It doesn&#8217;t include things that have been caught by Facebook&#8217;s spam filter, things that have been reported or marked as spam, and that have been pulled from the feed. If Top News is a subset of All, we still don&#8217;t know what All is a subset of &#8212; can this collaborative audit approach answer this question? Christian replies that it&#8217;s not possible to get that.</p>
+<p><a href="https://twitter.com/judithd">Judith Donath</a> replies that Facebook is more open than most algorithms. Even if the API disappeared, you could still recreate the &#8220;all&#8221; feed. Since most of these things have no accessible version of &#8220;all&#8221;&#8211; how could this technique apply elsewhere? Karrie replies that they chose a specific feature that they can focus on. For different tools and sites, it might be possible for companies to expose specific features, to give users the idea that an algorithm is under the hood. Christian replies that you could do the same collaborative audit on other systems like Twitter. In the case of Google, there&#8217;s a big SEO community who try to understand how the algorithm works.</p>
+<p><a href="http://www.tarletongillespie.org/">Tarleton Gillespie</a>, after noting that he&#8217;s sympathetic to the questions, wonders if the metaphor of the audit might be tricky. Isn&#8217;t the classic social science audit more of a sockpuppet approach. Sometimes, it can depend on the API, sometimes there won&#8217;t be an API and you end up working with people. Might the truly collaborative audit involve setting a system into the wild, so that people might learn about the algorithm using that system, and then offer feedback. Karrie talks about a game that gives people feedback on their Facebook behavior. At the same time, it&#8217;s hard to know what to expect&#8211; in a previous attempt to do this in Mechanical Turk.</p>
+<p>Christian notes that although it&#8217;s not the perfect metaphor, it offers a direction for us to start answering questions raised by people like Latanya Sweeney in her work on racism in ad placement. Cedric points out that the approach also has the advantage of avoiding the label of reverse engineering.</p>
+<p>A participant asks about whether these systems could offer insight into the role of advertising? Christian notes that this could benefit the public and also serve the advertising profit motive as well.</p>
+<p>A participant asks about the issue of consent around research on Facebook? Karrie notes that this project, which brought people into the lab, was more on the consent side of things. This group has been as consent-ey as possible. As the project moves towards a collective approach, they might start using online consent. Christian notes that a collaborative audit would be collaborative &#8212; people would like to collaborate with researchers to figure out their news feed. </p>
+<p>I asked what work the team has done to develop protections for research happening in gray areas of the law. Christian notes that there&#8217;s not that much debate that the CFAA sucks. Researchers struggle in these areas because there are legal institutions that get in the way of doing the right thing. Audits are also in trouble when it comes to IRB &#8212; because the researchers are in an adversarial relationship with institutions. The research community should stand up to reform these laws.</p>
+<p>Is there any person at Facebook who knows how the algorithm works? Karrie notes that any complex system with many people, the chief architect in that team often knows. Christian argues that it&#8217;s not important to assign blame to individuals &#8212; whether Mark Zuckerberg is a nice man or not isn&#8217;t the point &#8212; what matters is the structure.</p>
+<p><a href="https://twitter.com/shrapnelofme">Amy Johnson</a> notes that the study taught people to be more aware of an &#8220;algorithmic gaze&#8221; with interesting and complicated qualities. Did people think that their choices in their relationships led to their results, and did people think about how they might manage their relationships on Facebook? Karrie replies that in many cases, people who spoke frequently with each other face-to-face didn&#8217;t expect to see that person on Facebook. The main explanations people gave were clicking behaviours, inbox behaviours, and even imaginings about algorithms like topic analysis, and which pages they read online. Christian replies that people <em>could</em> read the NewsFeed as a reflection of their own choices. Sandvig prefers to think about the NewsFeed as an arbitrary system we need to understand.</p>
+<p><a href="https://twitter.com/npseaver">Nick Seaver</a> at UC Irvine notes that most of these theories are Folk Theories. If you sit next to someone who&#8217;s working on a personalization algorithm, you get similarly informed explanations that may not have anything to do with how the system works under the hood. Nick notes that by sampling the algorithm collaboratively, it may be possible to learn more about &#8220;what the algorithm is really up to&#8221; &#8212; what happens if all theories, including ones developed collaboratively, are folk theories. Karrie used to describe people&#8217;s understanding of algorithms in terms of &#8220;mental maps&#8221; but many people didn&#8217;t actually have mental maps. One path forward is to collect folk theories and try to understand the common denominators. Another is to construct collaborative tasks: if I do this, what will happen? Christian notes. Sandvig mentions <a href="http://www.benedelman.org/">Edelman&#8217;s</a> work conducting queries that raise concerns about fraud on a variety of platforms.</p>
+<p>A participant notes that the data is highly dimensional &#8212; since there are only seven billion people and trillions of inputs, does it matter if an algorithm could be doing something like discrimination matter (<em>could</em> be doing something illegal, <em>is</em> doing something illegal, or <em>has unethical consequences</em>). Cedric replies that assuming we could come up with a model that suggests a company is discriminating, a court of law might be able to subpoena a company. You might never be able to assign intent from an audit, saying that <em>for sure</em>, you are using race as part of your model. But you could use suggestive data to subpoena. In France, it&#8217;s illegal to hold data about religion, and you can&#8217;t ask about religion. You can take surrogates, but if you constructed an object that could predict religion, you might get in trouble.</p>
+      </div>
+      <footer class="post-footer clearfix">
+                <div class="row entry-meta justify-content-between align-items-center">
+                          </div>
+      </footer>
+    </section><!-- .entry-content -->
+  </div><!-- .post-entry -->
+  </article>
+<div id="czr-comments" class="comments-area " >
+    <div id="comments" class="comments_container comments czr-comments-block">
+  <section class="post-comments">
+      </section>
+</div>  </div>                </div>
+
+                
+            </div><!-- .column-content-wrapper -->
+
+            
+
+          </div><!-- .container -->
+
+          <div id="czr-push-footer" ></div>
+    </div><!-- #main-wrapper -->
+
+    
+          <div class="container-fluid">
+        <div class="post-navigation row " >
+  <nav id="nav-below" class="col-12">
+    <h2 class="sr-only">Post navigation</h2>
+    <ul class="czr_pager row flex-row flex-no-wrap">
+      <li class="previous col-5 text-left">
+              <span class="sr-only">Previous post</span>
+        <span class="nav-previous nav-dir"><a href="index.html%3Fp=350.html" rel="prev"><span class="meta-nav"><i class="arrow icn-left-open-big"></i><span class="meta-nav-title">HOPE X: Themes and Reflections</span></span></a></span>
+            </li>
+      <li class="nav-back col-2 text-center">
+                <a href="blog.html" title="Back to post list">
+          <span><i class="icn-grid-empty"></i></span>
+          <span class="sr-only">Back to post list</span>
+        </a>
+              </li>
+      <li class="next col-5 text-right">
+              <span class="sr-only">Next post</span>
+        <span class="nav-next nav-dir"><a href="index.html%3Fp=1889.html" rel="next"><span class="meta-nav"><span class="meta-nav-title">Emoji Karaoke at the Boston Internet Research Party</span><i class="arrow icn-right-open-big"></i></span></a></span>
+            </li>
+  </ul>
+  </nav>
+</div>
+      </div>
+    
+<footer id="footer" class="footer__wrapper" >
+  <div id="footer-widget-area" class="widget__wrapper" role="complementary" >
+  <div class="container widget__container">
+    <div class="row">
+                      <div id="footer_one" class="col-md-4 col-12">
+            <aside id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><img style="margin-top:20px" src="wp-content/uploads/sites/28/2018/04/footer-mit-media-lab.png" alt="MIT Media Lab"/>
+<br /><br />
+<a href="login.html">Login</a>
+</div></aside>          </div>
+                  <div id="footer_two" class="col-md-4 col-12">
+            <aside id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><img style="margin-top:10px" src="wp-content/uploads/sites/28/2018/04/logotype-white.png" alt="CMS/W"/>
+
+</div></aside><aside id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><img src="wp-content/uploads/sites/28/2018/04/footer-mit.png" alt="MIT"/>
+<br /><br />
+<small>
+All content Attribution-ShareAlike 3.0 United States (CC BY-SA 3.0) unless otherwise noted.
+The MIT Center for Civic Media is a project of MIT Comparative Media Studies and the MIT Media Lab.
+</small></div></aside>          </div>
+                  <div id="footer_three" class="col-md-4 col-12">
+            <aside id="tribe-events-adv-list-widget-2" class="widget tribe-events-adv-list-widget"><h5 class="widget-title">Upcoming Events</h5>
+		<!-- Event  -->
+		<div class="type-tribe_events post-2667 tribe-clearfix tribe-events-category-civic-meetings tribe-events-venue-2657">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Thu			</span>
+		
+		<span class="list-daynumber">16</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="index.html%3Fp=2667.html" rel="bookmark">Open Virtual Civic Meeting (Spring 2020)</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">July 16 @ 1:00 pm</span> - <span class="tribe-event-time">2:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Street, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div>
+
+		
+	
+		<!-- Event  -->
+		<div class="type-tribe_events post-2668 tribe-clearfix tribe-events-category-civic-meetings tribe-events-venue-2657">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Thu			</span>
+		
+		<span class="list-daynumber">23</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="index.html%3Fp=2668.html" rel="bookmark">Open Virtual Civic Meeting (Spring 2020)</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">July 23 @ 1:00 pm</span> - <span class="tribe-event-time">2:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Street, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div>
+
+		
+	
+		<!-- Event  -->
+		<div class="type-tribe_events post-2669 tribe-clearfix tribe-events-category-civic-meetings tribe-events-venue-2657">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Thu			</span>
+		
+		<span class="list-daynumber">30</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="index.html%3Fp=2669.html" rel="bookmark">Open Virtual Civic Meeting (Spring 2020)</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">July 30 @ 1:00 pm</span> - <span class="tribe-event-time">2:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Street, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div>
+
+		
+	
+		<p class="tribe-events-widget-link">
+		<a href="events.html" rel="bookmark">
+			View More&hellip;		</a>
+	</p>
+	
+</aside><script type="application/ld+json">
+[{"@context":"http://schema.org","@type":"Event","name":"Open Virtual Civic Meeting (Spring 2020)","description":"&lt;p&gt;Update: We\\'re going virtual! Join us from anywhere! You can download Zoom in advance here:\u00a0http://zoom.us/download Meeting details: 1pm US Eastern Time Join Zoom Meeting:\u00a0https://zoom.us/j/620149867 Meeting ID: 620 149 867 One tap mobile +19292056099,,620149867# US (New York) +16699006833,,620149867# US (San Jose) Dial by your location +1 929 205 6099 US (New York) +1 669 900 6833 US (San Jose) Meeting ID: 620 149 867 Find your local number:\u00a0https://zoom.us/u/abGKRLXrER &nbsp; During the semester we host weekly meetings [&hellip;]&lt;/p&gt;\\n","url":"https://civic.mit.edu/event/open-civic-meeting-spring-2020/2020-07-16/","startDate":"2020-07-16T13:00:00-04:00","endDate":"2020-07-16T14:30:00-04:00","location":{"@type":"Place","name":"","description":"","url":"https://civic.mit.edu/venue/2657/","address":{"@type":"PostalAddress","addressRegion":"MA","addressCountry":"United States"},"telephone":"","sameAs":""},"performer":"Organization"},{"@context":"http://schema.org","@type":"Event","name":"Open Virtual Civic Meeting (Spring 2020)","description":"&lt;p&gt;Update: We\\'re going virtual! Join us from anywhere! You can download Zoom in advance here:\u00a0http://zoom.us/download Meeting details: 1pm US Eastern Time Join Zoom Meeting:\u00a0https://zoom.us/j/620149867 Meeting ID: 620 149 867 One tap mobile +19292056099,,620149867# US (New York) +16699006833,,620149867# US (San Jose) Dial by your location +1 929 205 6099 US (New York) +1 669 900 6833 US (San Jose) Meeting ID: 620 149 867 Find your local number:\u00a0https://zoom.us/u/abGKRLXrER &nbsp; During the semester we host weekly meetings [&hellip;]&lt;/p&gt;\\n","url":"https://civic.mit.edu/event/open-civic-meeting-spring-2020/2020-07-23/","startDate":"2020-07-23T13:00:00-04:00","endDate":"2020-07-23T14:30:00-04:00","location":{"@type":"Place","name":"","description":"","url":"https://civic.mit.edu/venue/2657/","address":{"@type":"PostalAddress","addressRegion":"MA","addressCountry":"United States"},"telephone":"","sameAs":""},"performer":"Organization"},{"@context":"http://schema.org","@type":"Event","name":"Open Virtual Civic Meeting (Spring 2020)","description":"&lt;p&gt;Update: We\\'re going virtual! Join us from anywhere! You can download Zoom in advance here:\u00a0http://zoom.us/download Meeting details: 1pm US Eastern Time Join Zoom Meeting:\u00a0https://zoom.us/j/620149867 Meeting ID: 620 149 867 One tap mobile +19292056099,,620149867# US (New York) +16699006833,,620149867# US (San Jose) Dial by your location +1 929 205 6099 US (New York) +1 669 900 6833 US (San Jose) Meeting ID: 620 149 867 Find your local number:\u00a0https://zoom.us/u/abGKRLXrER &nbsp; During the semester we host weekly meetings [&hellip;]&lt;/p&gt;\\n","url":"https://civic.mit.edu/event/open-civic-meeting-spring-2020/2020-07-30/","startDate":"2020-07-30T13:00:00-04:00","endDate":"2020-07-30T14:30:00-04:00","location":{"@type":"Place","name":"","description":"","url":"https://civic.mit.edu/venue/2657/","address":{"@type":"PostalAddress","addressRegion":"MA","addressCountry":"United States"},"telephone":"","sameAs":""},"performer":"Organization"}]
+</script>          </div>
+                  </div>
+  </div>
+</div>
+<div id="colophon" class="colophon " >
+  <div class="container">
+    <div class="colophon__row row flex-row justify-content-between">
+      <div class="col-12 col-sm-auto">
+        <div id="footer__credits" class="footer__credits" >
+  <p class="czr-copyright">
+    <span class="czr-copyright-text">&copy;&nbsp;2020&nbsp;</span><a class="czr-copyright-link" href="index.html" title="MIT Center for Civic Media">MIT Center for Civic Media</a><span class="czr-rights-text">&nbsp;&ndash;&nbsp;All rights reserved</span>
+  </p>
+  <p class="czr-credits">
+    <span class="czr-designer">
+      <span class="czr-wp-powered"><span class="czr-wp-powered-text">Powered by&nbsp;</span><a class="czr-wp-powered-link fab fa-wordpress" title="Powered by WordPress" href="https://wordpress.org/" target="_blank" rel="noopener noreferrer"></a></span><span class="czr-designer-text">&nbsp;&ndash;&nbsp;Designed with the <a class="czr-designer-link" href="https://presscustomizr.com/customizr" title="Customizr theme">Customizr theme</a></span>
+    </span>
+  </p>
+</div>
+      </div>
+            <div class="col-12 col-sm-auto">
+        <div class="social-links">
+          <ul class="socials " >
+  <li ><a rel="nofollow noopener noreferrer" class="social-icon icon-feed"  title="Subscribe to my rss feed" aria-label="Subscribe to my rss feed" href="http://civic-homepage.wordpress.brownbag.me/feed/rss/"  target="_blank" ><i class="fas fa-rss"></i></a></li></ul>
+        </div>
+      </div>
+          </div>
+  </div>
+</div>
+</footer>
+    </div><!-- end #tc-page-wrap -->
+
+    <button class="btn czr-btt czr-btta right" ><i class="icn-up-small"></i></button>
+<script type='text/javascript'>
+var colomatduration = 'fast';
+var colomatslideEffect = 'slideFade';
+var colomatpauseInit = '';
+var colomattouchstart = '';
+</script>		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><script type='text/javascript' src='https://maps.google.com/maps/api/js?key=AIzaSyDNsicAsP6-VuGtAb1O9riI3oc_NOb7IOU&#038;ver=4.4.32'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var GeoLoc = {"ajaxurl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","nonce":"595356a5ba","map_view":"","pin_url":""};
+var GeoLoc = {"ajaxurl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","nonce":"595356a5ba","map_view":"","pin_url":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/events-calendar-pro/src/resources/js/tribe-events-ajax-maps.min.js%3Fver=4.4.32'></script>
+<script type='text/javascript' src='wp-includes/js/imagesloaded.min.js%3Fver=3.2.0'></script>
+<script type='text/javascript' src='wp-includes/js/masonry.min.js%3Fver=3.3.2'></script>
+<script type='text/javascript' src='wp-content/plugins/jquery-collapse-o-matic/js/collapse.js%3Fver=1.6.19'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/ui/core.min.js%3Fver=1.11.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var tve_dash_front = {"ajaxurl":"https:\/\/civic.mit.edu\/wp-admin\/admin-ajax.php","force_ajax_send":"","is_crawler":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/thrive-visual-editor/thrive-dashboard/js/dist/frontend.min.js%3Fver=2.2.17'></script>
+<script type='text/javascript' src='wp-includes/js/wp-embed.min.js%3Fver=5.4.2'></script>
+<script type="text/javascript">var tcb_post_lists=JSON.parse('[]');</script>  </body>
+  </html>

@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MIT Center for Civic Media - ECPv5.1.2.1//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MIT Center for Civic Media
+X-ORIGINAL-URL:https://civic.mit.edu
+X-WR-CALDESC:Events for MIT Center for Civic Media
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:20180311T070000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:20181104T060000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTART;TZID=America/New_York:20181029T160000
+DTEND;TZID=America/New_York:20181029T173000
+DTSTAMP:20200714T003634
+CREATED:20181026T195323Z
+LAST-MODIFIED:20181029T164237Z
+UID:2318-1540828800-1540834200@civic.mit.edu
+SUMMARY:Fighting 21st Century Hate - ADL
+DESCRIPTION:Fighting 21st Century Hate: A 360 view with the ADL\, hosted by Ethan Zuckerman \nMonday\, October 29\, 2018\, 4:00pm — 5:30pm \nMIT Media Lab\, E14 – 633\, 75 Amherst Street\, Cambridge\, MA \n“To MIT and Harvard communities: Adam Neufeld\, ADL’s VP Innovation and Strategy\, looks forward to speaking about the state of online hate. He will talk about ADL’s Center for Technology\, some of its latest cutting edge\, published research and its collaborative work with tech companies. Due to the tragic act in Pittsburgh\, Jonathan Greenblatt is unable to travel to Boston for the event.” \nIn the new arena of Twitter doxxing and other emerging tools\, hate has learned to travel different pathways. Likewise\, the effort to fight hate has been developing new methods to respond when the battle has one foot in the court room and one in the message boards. \nThe Media Lab welcomes Adam Neufeld\, Vice President of Innovation and Strategy of the ADL\, an organization founded in 1913. \nAdam Neufeld is the Vice President of Innovation & Strategy at ADL. In that role\, he oversees the organization’s cyberhate work\, and works to transform the 105-year-old organization to meet new trends in bias and extremism. Adam joined ADL in early 2018 after serving as the Deputy Administrator of the General Services Administration. He helped create an innovative new group called 18F that brought in over 100 coders and designers to work on the government’s most difficult technology issues in a modern\, user-centered way. He also scaled an office of behavioral scientists and academics to evaluate government programs and design interventions. He worked at several other agencies\, including as a lawyer. In addition\, he was a consultant at McKinsey & Co.\, where he served government and nonprofit clients. \nAdam has a B.S. in Neuroscience from Brown University\, and a J.D. from Harvard Law School. \nHe will speak with us about the development of this work and the strategies of a century-old organization responding to hate on the ground and in the virtual landscape unfolding before us. \nThe Media Lab welcomes Jonathan A. Greenblatt\, Chief Executive Officer and National Director of ADL\, an organization founded in 1913. \nJonathan has re-positioned the organization by speaking out against rising anti-Semitism and also by taking bold positions on controversial issues such as fighting the Muslim ban\, protecting immigrants’ rights and combatting extremism in all forms. In addition\, he has brought ADL to the forefront of fighting cyberhate and online harassment\, opening the Center for Technology and Society in Silicon Valley\, establishing active partnerships with leading tech companies and launching new tools like the Online Hate Index\, an application that uses artificial intelligence and machine learning to identify intolerance on social media. In the past several years\, ADL has written breakthrough research exposing the Alt-Right\, identified the links between global right-wing extremist networks and revealed troubling patterns of anti-Semitism and other forms of bigotry in certain left-wing circles of influence.\n \n
+URL:https://civic.mit.edu/event/fighting-21st-century-hate-talk-by-jonathan-greenblatt-ceo-of-adl/
+LOCATION:MIT Center for Civic Media\, 20 Ames St.\, Cambridge\, MA\, 02139\, United States
+CATEGORIES:Talks
+ATTACH;FMTTYPE=image/png:https://civic.mit.edu/wp-content/uploads/sites/28/2018/10/adl-talk.png
+END:VEVENT
+END:VCALENDAR
